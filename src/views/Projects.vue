@@ -1,5 +1,8 @@
 <template>
-  <div class="projects-view-wrapper">
+  <div
+    class="projects-view-wrapper"
+    :style="{ gridTemplateRows: calculateRows }"
+  >
     <div class="page-description">
       <em
         >Projekt i urval. Skoluppgifter och grejer jag pysslat med innan
@@ -10,30 +13,30 @@
     <ProjectDescription
       v-for="project of this.projects"
       :key="project.id"
-      :color="project.color"
-      :column="project.column"
-      :row="project.row"
-      :projectTitle="project.title"
-      :projectDescription="project.description"
+      :project="project"
     />
-    <div
-      class="image-container"
+    <ProjectImageContainer
       v-for="project of this.projects"
       :key="'image ' + project.id"
-      :style="{
-        gridRow: `${project.row[0]} / span ${project.row[1]}`,
-      }"
-    ></div>
+      :project="project"
+    />
   </div>
 </template>
 
 <script>
 import ProjectDescription from '../components/ProjectDescription'
-import projects from '../assets/projects'
+import ProjectImageContainer from '../components/ProjectImageContainer'
+import projects from '../data/projects'
 
 export default {
   components: {
     ProjectDescription,
+    ProjectImageContainer,
+  },
+  computed: {
+    calculateRows() {
+      return `repeat(${this.projects.length * 7}, 64px)`
+    },
   },
   data() {
     return {
@@ -53,7 +56,7 @@ $mobile-cutoff: 650px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(20, 64px);
+  // grid-template-rows: repeat(30, 64px);
   margin: 4rem auto 0;
   max-width: 120rem;
 
@@ -79,11 +82,6 @@ $mobile-cutoff: 650px;
       grid-column: 1 / span 8;
       grid-row: 2 / span 3;
     }
-  }
-
-  .image-container {
-    border: 1px solid white;
-    grid-column: 4 / span 6;
   }
 }
 </style>

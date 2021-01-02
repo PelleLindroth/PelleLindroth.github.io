@@ -2,19 +2,18 @@
   <div
     class="description-container"
     :style="{
-      gridColumn: `${column[0]} / span ${column[1]}`,
-      gridRow: `${row[0]} / span ${row[1]}`,
+      gridRow: `${project.row[0]} / span ${project.row[1]}`,
     }"
   >
     <div>
       <h2
         :style="{
-          color: color,
+          color: project.color,
         }"
       >
-        {{ projectTitle }}
+        {{ project.title }}
       </h2>
-      <p>{{ projectDescription }}</p>
+      <p>{{ project.description }}</p>
     </div>
 
     <div class="links">
@@ -41,11 +40,7 @@
 <script>
 export default {
   props: {
-    color: String,
-    column: Array,
-    row: Array,
-    projectTitle: String,
-    projectDescription: String,
+    project: Object,
   },
 }
 </script>
@@ -56,8 +51,9 @@ $mobile-cutoff: 650px;
 .description-container {
   display: flex;
   flex-direction: column;
+  grid-column: 1 / span 3;
   justify-content: space-between;
-  min-height: 100%;
+  max-height: 30rem;
 
   h2 {
     font-family: 'Righteous', cursive;
@@ -77,6 +73,7 @@ $mobile-cutoff: 650px;
       font-size: 1rem;
     }
   }
+
   .links {
     .link {
       align-items: center;
