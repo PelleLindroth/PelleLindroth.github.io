@@ -62,6 +62,11 @@ body {
   color: #ececec;
   cursor: default;
   font-family: 'Roboto', sans-serif;
+  padding: 0 2rem;
+
+  @media screen and (max-width: $mobile-cutoff) {
+    padding: 0;
+  }
 
   header {
     align-items: center;
