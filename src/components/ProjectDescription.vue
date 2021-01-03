@@ -31,12 +31,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isMobile() {
-        return this.$root.isMobile
-      },
-    }
+  computed: {
+    isMobile() {
+      return this.$root.isMobile
+    },
   },
   props: {
     project: Object,
