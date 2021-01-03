@@ -2,15 +2,20 @@
   <div
     class="image-container"
     :style="{
-      gridRow: `${project.row[0]} / span ${project.row[1]}`,
+      gridRow: `${project.row - (isMobile ? project.id : 0)} / span 4`,
     }"
   >
     <img
-      v-for="image of project.images"
+      v-for="(image, index) of project.images"
       :key="image.url"
       :src="getImgUrl(image)"
       :alt="image"
-      :style="{ maxHeight: getHeight }"
+      @click="showImage"
+      :style="{
+        maxHeight: getHeight,
+        display: index > 1 && isMobile ? 'none' : 'block',
+        marginRight: index > 1 ? '0' : '1rem',
+      }"
     />
   </div>
 </template>
@@ -24,6 +29,9 @@ export default {
       }
       return '100%'
     },
+    isMobile() {
+      return this.$root.isMobile
+    },
   },
   props: {
     project: Object,
@@ -32,21 +40,43 @@ export default {
     getImgUrl(image) {
       return require(`../assets/${image}`)
     },
+    showImage(e) {
+      let url = e.target.getAttribute('alt')
+      this.$emit('openModal', url)
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+$mobile-cutoff: 650px;
+
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  grid-column: 4 / span 8;
+  grid-column: 4 / span 6;
   margin-top: 1rem;
   max-height: 30rem;
 
+  @media screen and (max-width: $mobile-cutoff) {
+    grid-column: 4 / span 5;
+    justify-content: flex-end;
+    margin-top: 4.2rem;
+    max-height: 17.5rem;
+    z-index: 1;
+  }
+
   img {
+    cursor: pointer;
     margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin-right: 1rem !important;
+    max-width: 100%;
+    object-fit: cover;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem !important;
+    }
   }
 }
 </style>

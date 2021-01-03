@@ -2,7 +2,7 @@
   <div
     class="description-container"
     :style="{
-      gridRow: `${project.row[0]} / span ${project.row[1]}`,
+      gridRow: `${project.row - (isMobile ? project.id : 0)} / span 4`,
     }"
   >
     <div>
@@ -13,23 +13,15 @@
       >
         {{ project.title }}
       </h2>
-      <p>{{ project.description }}</p>
+      <p v-html="project.description"></p>
     </div>
 
     <div class="links">
-      <a
-        href="https://github.com/PelleLindroth/brewdog-punk-wiki"
-        class="link"
-        target="_blank"
-      >
+      <a :href="project.links[0]" class="link" target="_blank">
         <img src="../assets/github-icon.svg" alt="Github Icon" />
         <p>Se kod på GitHub</p>
       </a>
-      <a
-        href="https://pellelindroth.github.io/brewdog-punk-wiki/"
-        class="link"
-        target="_blank"
-      >
+      <a :href="project.links[1]" class="link" target="_blank">
         <img src="../assets/web-icon.svg" alt="Web Icon" />
         <p>Se sidan live</p>
       </a>
@@ -39,6 +31,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isMobile() {
+        return this.$root.isMobile
+      },
+    }
+  },
   props: {
     project: Object,
   },
@@ -55,6 +54,10 @@ $mobile-cutoff: 650px;
   justify-content: space-between;
   max-height: 30rem;
 
+  @media screen and (max-width: $mobile-cutoff) {
+    max-height: 21.6rem;
+  }
+
   h2 {
     font-family: 'Righteous', cursive;
     font-size: 3.6rem;
@@ -62,6 +65,8 @@ $mobile-cutoff: 650px;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 2.2rem;
+      letter-spacing: -0.2px;
+      min-width: 30rem;
     }
   }
 
@@ -70,7 +75,8 @@ $mobile-cutoff: 650px;
     font-weight: 300;
 
     @media screen and (max-width: $mobile-cutoff) {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      margin-right: 0.5rem;
     }
   }
 

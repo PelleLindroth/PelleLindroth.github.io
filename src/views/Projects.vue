@@ -3,6 +3,12 @@
     class="projects-view-wrapper"
     :style="{ gridTemplateRows: calculateRows }"
   >
+    <ImageModal
+      v-if="showModal"
+      @closeModal="closeModal"
+      :showModal="showModal"
+      :image="modalImage"
+    />
     <div class="page-description">
       <em
         >Projekt i urval. Skoluppgifter och grejer jag pysslat med innan
@@ -19,6 +25,7 @@
       v-for="project of this.projects"
       :key="'image ' + project.id"
       :project="project"
+      @openModal="openModal"
     />
   </div>
 </template>
@@ -26,10 +33,12 @@
 <script>
 import ProjectDescription from '../components/ProjectDescription'
 import ProjectImageContainer from '../components/ProjectImageContainer'
+import ImageModal from '../components/ImageModal'
 import projects from '../data/projects'
 
 export default {
   components: {
+    ImageModal,
     ProjectDescription,
     ProjectImageContainer,
   },
@@ -38,13 +47,26 @@ export default {
       return `repeat(${this.projects.length * 7}, 64px)`
     },
   },
-  data() {
-    return {
-      projects,
-    }
-  },
   created() {
     document.title = 'Pelle Lindroth | Projekt'
+  },
+  data() {
+    return {
+      modalImage: null,
+      projects,
+      showModal: false,
+    }
+  },
+  methods: {
+    closeModal() {
+      this.showModal = false
+      document.body.style.overflow = 'scroll'
+    },
+    openModal(e) {
+      this.modalImage = e
+      this.showModal = true
+      document.body.style.overflow = 'hidden'
+    },
   },
 }
 </script>
@@ -56,7 +78,6 @@ $mobile-cutoff: 650px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows: repeat(30, 64px);
   margin: 4rem auto 0;
   max-width: 120rem;
 
@@ -72,7 +93,7 @@ $mobile-cutoff: 650px;
 
   .page-description {
     color: white;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 300;
     grid-column: 1 / span 6;
     grid-row: 1 / span 2;
@@ -80,7 +101,8 @@ $mobile-cutoff: 650px;
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 1.4rem;
       grid-column: 1 / span 8;
-      grid-row: 2 / span 3;
+      grid-row: 1 / span 3;
+      margin-top: 3rem;
     }
   }
 }

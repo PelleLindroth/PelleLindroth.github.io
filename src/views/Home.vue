@@ -1,10 +1,11 @@
 <template>
   <div class="home-view-wrapper">
-    <div v-show="showModal" ref="modal" class="image-modal">
-      <div class="close-icon" @click="closeModal">
-        <img src="@/assets/clear-icon.svg" alt="" />
-      </div>
-    </div>
+    <ImageModal
+      v-if="showModal"
+      @closeModal="closeModal"
+      :showModal="showModal"
+      :image="modalImage"
+    />
     <div class="title">
       <em>{{ english ? 'Latest project:' : 'Senaste projekt:' }}</em>
     </div>
@@ -37,29 +38,26 @@
     <div class="main">
       <img
         class="main"
-        @click="showModalImage"
+        @click="openModal"
         src="../assets/beer-wiki-random-beer.png"
-        url="../assets/beer-wiki-random-beer.png"
-        alt="Brewdog Punk Wiki Webpage Screenshot"
+        alt="beer-wiki-random-beer.png"
       />
     </div>
     <div class="thumbnails">
       <div>
         <img
-          @click="showModalImage"
+          @click="openModal"
           class="small1"
           src="../assets/beer-wiki-beer-info.png"
-          url="../assets/beer-wiki-beer-info.png"
-          alt="Brewdog Punk Wiki Webpage Screenshot"
+          alt="beer-wiki-beer-info.png"
         />
       </div>
       <div>
         <img
           class="small2"
-          @click="showModalImage"
+          @click="openModal"
           src="../assets/beer-wiki-results.png"
-          url="../assets/beer-wiki-results.png"
-          alt="Brewdog Punk Wiki Webpage Screenshot"
+          alt="beer-wiki-results.png"
         />
       </div>
     </div>
@@ -67,12 +65,16 @@
 </template>
 
 <script>
+import ImageModal from '../components/ImageModal'
+
 export default {
   created() {
     document.title = 'Pelle Lindroth | Portfolio'
   },
   name: 'Home',
-  components: {},
+  components: {
+    ImageModal,
+  },
   computed: {
     english() {
       return this.$root.english
@@ -80,21 +82,19 @@ export default {
   },
   data() {
     return {
+      modalImage: null,
       showModal: false,
-      imageParent: null,
     }
   },
   methods: {
-    closeModal(e) {
-      this.imageParent.appendChild(e.target.parentElement.nextSibling)
+    closeModal() {
       this.showModal = false
       document.body.style.overflow = 'scroll'
     },
-    showModalImage(e) {
-      this.imageParent = e.target.parentElement
-      this.$refs.modal.appendChild(e.target)
-      document.body.style.overflow = 'hidden'
+    openModal(e) {
+      this.modalImage = e.target.getAttribute('alt')
       this.showModal = true
+      document.body.style.overflow = 'hidden'
     },
   },
 }
@@ -183,8 +183,9 @@ $mobile-cutoff: 650px;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 2.6rem;
-      grid-column: 1 / span 3;
+      grid-column: 1 / span 4;
       grid-row: 3 / span 2;
+      letter-spacing: -0.5px;
     }
   }
 
@@ -254,11 +255,13 @@ $mobile-cutoff: 650px;
     }
 
     img {
+      cursor: pointer;
       max-width: 100%;
     }
   }
 
   .thumbnails {
+    cursor: pointer;
     display: flex;
     grid-column: 4 / span 4;
     grid-row: 6;
