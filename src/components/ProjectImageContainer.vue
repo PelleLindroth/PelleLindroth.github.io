@@ -14,7 +14,6 @@
       :style="{
         maxHeight: getHeight,
         display: index > 1 && isMobile ? 'none' : 'block',
-        marginRight: index > 1 ? '0' : '1rem',
       }"
     />
   </div>
