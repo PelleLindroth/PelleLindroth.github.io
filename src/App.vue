@@ -75,7 +75,8 @@ body {
 
     @media screen and (max-width: $mobile-cutoff) {
       border-bottom: 1px solid #ececec;
-      height: 6.5rem;
+      height: 6rem;
+      margin: 0 auto;
       width: 100%;
       padding: 0 1rem;
 
