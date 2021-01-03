@@ -8,6 +8,9 @@ new Vue({
   data() {
     return {
       english: false,
+      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
     }
   },
   methods: {
