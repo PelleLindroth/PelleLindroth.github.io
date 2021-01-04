@@ -333,7 +333,7 @@ $mobile-cutoff: 650px;
       font-weight: 300;
 
       @media screen and (max-width: $mobile-cutoff) {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
       a {
@@ -375,6 +375,7 @@ $mobile-cutoff: 650px;
 
       @media screen and (max-width: $mobile-cutoff) {
         font-size: 1.8rem;
+        padding: 1rem 0 1rem 1rem;
       }
     }
 
@@ -459,7 +460,7 @@ $mobile-cutoff: 650px;
         max-width: 50rem;
 
         @media screen and (max-width: $mobile-cutoff) {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
           max-width: 100%;
         }
 
@@ -507,6 +508,8 @@ $mobile-cutoff: 650px;
 
         @media screen and (max-width: $mobile-cutoff) {
           margin-bottom: 3rem;
+          min-width: 0;
+          max-width: 100%;
         }
 
         p {
@@ -514,7 +517,7 @@ $mobile-cutoff: 650px;
           font-weight: 300;
 
           @media screen and (max-width: $mobile-cutoff) {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
           }
         }
 
