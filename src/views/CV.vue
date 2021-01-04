@@ -232,7 +232,7 @@
         </div>
       </section>
       <section class="education">
-        <h3>Utbildning</h3>
+        <h3>Utbildningar</h3>
         <div class="education-boxes">
           <div class="education-box">
             <p><span>Vad: </span>Javascriptutveckling</p>
@@ -280,14 +280,14 @@ $mobile-cutoff: 650px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(20, 64px);
+  grid-template-rows: repeat(40, 64px);
   margin: 4rem auto 0;
   max-width: 120rem;
 
   @media screen and (max-width: $mobile-cutoff) {
     gap: 1rem;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(20, 1.6rem);
+    grid-template-rows: repeat(110, 1.6rem);
     margin: auto;
     padding: 0 1rem;
     width: 100vw;
@@ -298,6 +298,12 @@ $mobile-cutoff: 650px;
     grid-column: 1 / span 7;
     grid-row: 1 / span 7;
 
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-column: 1 / span 8;
+      grid-row: 2 / span 16;
+      margin-right: 2rem;
+    }
+
     .presentation-header {
       align-items: flex-end;
       display: flex;
@@ -305,18 +311,30 @@ $mobile-cutoff: 650px;
 
       img {
         width: 14rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          width: 5rem;
+        }
       }
 
       h2 {
         color: #fcd577;
         font-family: 'Righteous', cursive;
         font-size: 3.2rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          font-size: 1.6rem;
+        }
       }
     }
 
     .presentation-content {
       font-size: 2.2rem;
       font-weight: 300;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 1.4rem;
+      }
 
       a {
         color: #ececec;
@@ -329,6 +347,10 @@ $mobile-cutoff: 650px;
 
   section {
     margin-bottom: 10rem;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      margin-bottom: 6rem;
+    }
   }
 
   .cv-container {
@@ -336,6 +358,11 @@ $mobile-cutoff: 650px;
     flex-direction: column;
     grid-column: 1 / span 12;
     grid-row: 10 / auto;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-column: 1 / span 8;
+      grid-row: 19 / auto;
+    }
 
     h3 {
       background-color: #fcd577;
@@ -345,19 +372,38 @@ $mobile-cutoff: 650px;
       margin-bottom: 3rem;
       padding: 0.5rem 0 0.5rem 1rem;
       width: 100%;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 1.8rem;
+      }
     }
 
     .skills-content-boxes {
       display: flex;
 
+      @media screen and (max-width: $mobile-cutoff) {
+        flex-direction: column;
+      }
+
       .skills-content {
         margin-right: 5rem;
         min-width: 50rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          margin-right: 0;
+          max-width: 80%;
+          min-width: 0;
+        }
 
         p {
           font-size: 2.6rem;
           font-weight: 700;
           margin-bottom: 1rem;
+
+          @media screen and (max-width: $mobile-cutoff) {
+            font-size: 1.6rem;
+            font-weight: 500;
+          }
         }
 
         ul {
@@ -373,13 +419,26 @@ $mobile-cutoff: 650px;
           line-height: 1.2;
           margin-bottom: 0.5rem;
 
+          @media screen and (max-width: $mobile-cutoff) {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+          }
+
           .icon-container {
             display: flex;
             justify-content: flex-start;
             min-width: 4.5rem;
 
+            @media screen and (max-width: $mobile-cutoff) {
+              min-width: 3rem;
+            }
+
             img {
               height: 2.4rem;
+
+              @media screen and (max-width: $mobile-cutoff) {
+                height: 1.6rem;
+              }
             }
           }
         }
@@ -398,6 +457,11 @@ $mobile-cutoff: 650px;
         margin-bottom: 5rem;
         margin-right: 5rem;
         max-width: 50rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          font-size: 1.4rem;
+          max-width: 100%;
+        }
 
         hr {
           border: 1px solid #333;
@@ -428,6 +492,10 @@ $mobile-cutoff: 650px;
   .education {
     padding-bottom: 30rem;
 
+    @media screen and (max-width: $mobile-cutoff) {
+      padding-bottom: 10rem;
+    }
+
     .education-boxes {
       display: flex;
       flex-wrap: wrap;
@@ -436,9 +504,18 @@ $mobile-cutoff: 650px;
         margin-bottom: 5rem;
         margin-right: 5rem;
         min-width: 50rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          margin-bottom: 3rem;
+        }
+
         p {
           font-size: 2.4rem;
           font-weight: 300;
+
+          @media screen and (max-width: $mobile-cutoff) {
+            font-size: 1.4rem;
+          }
         }
 
         span {

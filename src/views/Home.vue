@@ -160,7 +160,6 @@ $mobile-cutoff: 650px;
   }
 
   .title {
-    align-items: flex-end;
     display: flex;
     font-size: 2.4rem;
     font-weight: 300;

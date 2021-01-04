@@ -1,32 +1,34 @@
 <template>
-  <div
-    class="projects-view-wrapper"
-    :style="{ gridTemplateRows: calculateRows }"
-  >
-    <ImageModal
-      v-if="showModal"
-      @closeModal="closeModal"
-      :showModal="showModal"
-      :image="modalImage"
-    />
-    <div class="page-description">
-      <em
-        >Projekt i urval. Skoluppgifter och grejer jag pysslat med innan
-        utbildningen och vid sidan av. Teknikerna växlar mellan React, Vue och
-        Native Javascript (ES6).</em
-      >
+  <div>
+    <div
+      class="projects-view-wrapper"
+      :style="{ gridTemplateRows: calculateRows }"
+    >
+      <ImageModal
+        v-if="showModal"
+        @closeModal="closeModal"
+        :showModal="showModal"
+        :image="modalImage"
+      />
+      <div class="page-description">
+        <em
+          >Projekt i urval. Skoluppgifter och grejer jag pysslat med innan
+          utbildningen och vid sidan av. Teknikerna växlar mellan React, Vue och
+          Native Javascript (ES6).</em
+        >
+      </div>
+      <ProjectDescription
+        v-for="project of this.projects"
+        :key="project.id"
+        :project="project"
+      />
+      <ProjectImageContainer
+        v-for="project of this.projects"
+        :key="'image ' + project.id"
+        :project="project"
+        @openModal="openModal"
+      />
     </div>
-    <ProjectDescription
-      v-for="project of this.projects"
-      :key="project.id"
-      :project="project"
-    />
-    <ProjectImageContainer
-      v-for="project of this.projects"
-      :key="'image ' + project.id"
-      :project="project"
-      @openModal="openModal"
-    />
   </div>
 </template>
 
@@ -44,7 +46,8 @@ export default {
   },
   computed: {
     calculateRows() {
-      return `repeat(${this.projects.length * 7}, 64px)`
+      let multiplier = this.$root.isMobile ? 5 : 6
+      return `repeat(${this.projects.length * multiplier}, 64px)`
     },
   },
   created() {
@@ -84,7 +87,7 @@ $mobile-cutoff: 650px;
   @media screen and (max-width: $mobile-cutoff) {
     gap: 1rem;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(auto-fill, 1.6rem);
+    // grid-template-rows: repeat(auto-fill, 1.6rem);
     margin: auto;
     padding: 0 1rem;
     width: 100vw;

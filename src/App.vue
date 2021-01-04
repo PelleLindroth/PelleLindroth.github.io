@@ -22,6 +22,9 @@
       </div>
     </header>
     <router-view />
+    <footer>
+      <p>© Pelle Lindroth 2021</p>
+    </footer>
   </div>
 </template>
 
@@ -147,6 +150,31 @@ body {
       .uk {
         background-image: url('./assets/uk-flag.svg');
         background-position: -1.3rem 0;
+      }
+    }
+  }
+
+  footer {
+    background-color: #555555;
+    display: grid;
+    height: 8rem;
+    margin-left: -2rem;
+    place-items: center;
+    width: 100vw;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      height: 6rem;
+      margin-left: 0;
+    }
+
+    p {
+      color: #fcd577;
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 1.2rem;
+        font-weight: 300;
       }
     }
   }

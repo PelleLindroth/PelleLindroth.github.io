@@ -53,7 +53,7 @@ $mobile-cutoff: 650px;
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  grid-column: 4 / span 6;
+  grid-column: 4 / span 8;
   margin-top: 1rem;
   max-height: 30rem;
 
