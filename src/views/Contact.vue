@@ -31,7 +31,7 @@
       <a href="mailto:pellelindroth@gmail.com" target="_blank">
         <div class="icon-container">
           <img
-            style="height: 1.6rem"
+            :style="{ height: this.$root.isMobile ? '1.2rem' : '1.6rem' }"
             src="../assets/mail-icon.svg"
             alt="Mail Icon"
           />
@@ -151,12 +151,16 @@ $mobile-cutoff: 650px;
       align-items: center;
       background-color: #ececec;
       box-sizing: content-box;
-      // height: 15rem;
       width: 40rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 2rem;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        text-align: center;
+        width: 80%;
+      }
 
       p {
         color: #333;
@@ -183,6 +187,10 @@ $mobile-cutoff: 650px;
     grid-row: 1 / span 3;
     max-width: 25rem;
 
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-row: 2 / span 4;
+    }
+
     a {
       align-items: center;
       color: #ececec;
@@ -192,12 +200,25 @@ $mobile-cutoff: 650px;
       margin-bottom: 1rem;
       text-decoration: none;
 
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
       .icon-container {
         margin-top: 0.5rem;
         min-width: 3rem;
 
+        @media screen and (max-width: $mobile-cutoff) {
+          min-width: 2rem;
+        }
+
         img {
           height: 2rem;
+
+          @media screen and (max-width: $mobile-cutoff) {
+            height: 1.5rem;
+          }
         }
       }
     }
@@ -206,15 +227,31 @@ $mobile-cutoff: 650px;
   form {
     display: flex;
     flex-direction: column;
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 8;
     grid-row: 4 / span 4;
     max-width: 60rem;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-row: 7 / span 8;
+      width: 99%;
+    }
 
     h2 {
       font-family: 'Righteous', cursive;
       font-size: 2.4rem;
       font-weight: 400;
       margin-bottom: 1rem;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 2rem;
+      }
+    }
+
+    input,
+    textarea {
+      background-color: #ececec;
+      border-radius: 0;
+      color: #333;
     }
 
     .message-input {
