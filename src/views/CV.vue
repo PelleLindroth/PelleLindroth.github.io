@@ -19,7 +19,7 @@
           kick jag brukade få från att skapa musik och text får jag numera
           mestadels genom att koda... <br /><br />Jag söker nu LIA-praktik för
           hösten 2021. Om du tror att jag skulle passa in på ditt företag,
-          <a href="/contact">hör gärna av dig</a>!
+          <router-link to="/contact">hör gärna av dig</router-link>!
         </p>
       </div>
     </div>
