@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-cutoff: 650px;
+$mobile-cutoff: 750px;
 
 .projects-view-wrapper {
   display: grid;

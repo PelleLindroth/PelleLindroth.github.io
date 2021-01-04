@@ -274,7 +274,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-cutoff: 650px;
+$mobile-cutoff: 750px;
 
 .cv-view-wrapper {
   display: grid;
@@ -287,7 +287,7 @@ $mobile-cutoff: 650px;
   @media screen and (max-width: $mobile-cutoff) {
     gap: 1rem;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(110, 1.6rem);
+    grid-template-rows: repeat(112, 1.6rem);
     margin: auto;
     padding: 0 1rem;
     width: 100vw;
@@ -361,7 +361,7 @@ $mobile-cutoff: 650px;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
-      grid-row: 19 / auto;
+      grid-row: 21 / auto;
     }
 
     h3 {

@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-cutoff: 650px;
+$mobile-cutoff: 750px;
 
 .image-modal {
   align-items: center;
