@@ -1,24 +1,5 @@
-# portfolio
+# Portfolio
 
-## Project setup
-```
-npm install
-```
+En portfoliosida byggd i Vue med presentation av några projekt, en CV och kontaktlänkar.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Kan ses på pellelindroth.github.io/
