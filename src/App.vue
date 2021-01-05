@@ -13,13 +13,13 @@
           english ? 'Contact' : 'Kontakt'
         }}</router-link>
       </nav>
-      <div v-if="english" class="flag-container" title="Language">
+      <!-- <div v-if="english" class="flag-container" title="Language">
         <div
           class="flag"
           :class="{ uk: english }"
           @click="this.$root.toggleLanguage"
         />
-      </div>
+      </div> -->
     </header>
     <router-view />
     <footer>
@@ -30,20 +30,16 @@
 
 <script>
 export default {
-  computed: {
-    english() {
-      return this.$root.english
-    },
-  },
-  data() {
-    return {}
-  },
+  // computed: {
+  //   english() {
+  //     return this.$root.english
+  //   },
+  // },
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
-
 $mobile-cutoff: 650px;
 
 :root {
@@ -148,7 +144,7 @@ body {
       }
 
       .uk {
-        background-image: url('./assets/uk-flag.svg');
+        background-image: url('./assets/swedish-flag.svg');
         background-position: -1.3rem 0;
       }
     }
