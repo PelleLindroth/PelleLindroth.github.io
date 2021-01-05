@@ -40,7 +40,7 @@
         class="main"
         @click="openModal"
         src="../assets/beerwiki-screenshot-1.png"
-        alt="beer-wiki-random-beer.png"
+        alt="beerwiki-screenshot-1.png"
       />
     </div>
     <div class="thumbnails">
@@ -49,7 +49,7 @@
           @click="openModal"
           class="small1"
           src="../assets/beerwiki-screenshot-2.png"
-          alt="beer-wiki-beer-info.png"
+          alt="beerwiki-screenshot-2.png"
         />
       </div>
       <div>
@@ -57,7 +57,7 @@
           class="small2"
           @click="openModal"
           src="../assets/beerwiki-screenshot-3.png"
-          alt="beer-wiki-results.png"
+          alt="beerwiki-screenshot-3.png"
         />
       </div>
     </div>
