@@ -39,7 +39,7 @@
       <img
         class="main"
         @click="openModal"
-        src="../assets/beer-wiki-random-beer.png"
+        src="../assets/beerwiki-screenshot-1.png"
         alt="beer-wiki-random-beer.png"
       />
     </div>
@@ -48,7 +48,7 @@
         <img
           @click="openModal"
           class="small1"
-          src="../assets/beer-wiki-beer-info.png"
+          src="../assets/beerwiki-screenshot-2.png"
           alt="beer-wiki-beer-info.png"
         />
       </div>
@@ -56,7 +56,7 @@
         <img
           class="small2"
           @click="openModal"
-          src="../assets/beer-wiki-results.png"
+          src="../assets/beerwiki-screenshot-3.png"
           alt="beer-wiki-results.png"
         />
       </div>
