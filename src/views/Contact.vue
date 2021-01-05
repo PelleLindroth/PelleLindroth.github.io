@@ -56,7 +56,7 @@
           type="text"
           placeholder="Din mailadress (valfritt)"
         />
-        <button>SKICKA</button>
+        <button ref="sendButton">{{ buttonText }}</button>
       </div>
     </form>
   </div>
@@ -71,6 +71,7 @@ export default {
   },
   data() {
     return {
+      buttonText: 'SKICKA',
       email: '',
       message: '',
       messageResult: '',
@@ -82,7 +83,10 @@ export default {
       this.messageSubmitted = false
       this.messageResult = ''
     },
-    sendEmail: function(e) {
+    sendEmail(e) {
+      this.buttonText = 'SKICKAR...'
+      this.$refs.sendButton.style.opacity = '0.5'
+
       emailjs
         .sendForm(
           'service_e8dqgkj',
@@ -104,6 +108,8 @@ export default {
       this.messageResult = 'Tack, ditt meddelande har skickats!'
       this.email = ''
       this.message = ''
+      this.buttonText = 'SKICKA'
+      this.$refs.sendButton.style.opacity = '1'
     },
     showFailure() {
       this.messageSubmitted = true
@@ -111,6 +117,8 @@ export default {
         'Tyvärr gick det inte att skicka meddelandet.\nFörsök gärna igen, eller kontakta mig på mail eller LinkedIn.'
       this.email = ''
       this.message = ''
+      this.buttonText = 'SKICKA'
+      this.$refs.sendButton.style.opacity = '1'
     },
   },
 }
@@ -288,6 +296,10 @@ $mobile-cutoff: 750px;
         margin-left: 1rem;
         outline: none;
         width: 17rem;
+
+        &:active {
+          transform: scale(0.98);
+        }
       }
     }
   }
