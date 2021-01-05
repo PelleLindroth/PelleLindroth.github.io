@@ -2,7 +2,9 @@
   <div class="cv-view-wrapper">
     <div class="presentation">
       <div class="presentation-header">
-        <img src="@/assets/profile-picture.png" alt="Profile picture" />
+        <div class="img-container">
+          <img src="@/assets/profile-picture.png" alt="Profile picture" />
+        </div>
         <h2>Om mig</h2>
       </div>
       <div class="presentation-content">
@@ -309,11 +311,19 @@ $mobile-cutoff: 750px;
       display: flex;
       margin-bottom: 2rem;
 
-      img {
-        width: 14rem;
+      .img-container {
+        min-height: 14rem;
 
         @media screen and (max-width: $mobile-cutoff) {
-          width: 5rem;
+          min-height: 5rem;
+        }
+
+        img {
+          width: 14rem;
+
+          @media screen and (max-width: $mobile-cutoff) {
+            width: 5rem;
+          }
         }
       }
 
