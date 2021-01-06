@@ -90,11 +90,11 @@ body {
       display: flex;
       justify-content: space-between;
       margin-left: 30rem;
-      width: 32rem;
+      width: 34.5rem;
 
       @media screen and (max-width: $mobile-cutoff) {
         margin-left: 0;
-        max-width: 16rem;
+        width: 16rem;
       }
 
       a {
@@ -107,7 +107,7 @@ body {
 
         @media screen and (max-width: $mobile-cutoff) {
           font-size: 1.2rem;
-          min-width: 5rem;
+          min-width: 5.33rem;
         }
       }
 
