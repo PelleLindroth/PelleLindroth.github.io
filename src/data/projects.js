@@ -1,7 +1,7 @@
 export default [
   {
     color: "#0A78F9",
-    description: "En enkel Todo-app i Vue. Använder Firebase Realtime Database för att spara användarnas todos, och Firebase Authentication för inloggning.",
+    description: "Skoluppgift. En enkel Todo-app i Vue. Använder Firebase Realtime Database för att spara användarnas todos, och Firebase Authentication för inloggning.",
     id: 0,
     images: ['todos-screenshot-1.png', 'todos-screenshot-2.png'],
     links: ['https://github.com/PelleLindroth/do-the-todo', 'https://pellelindroth.github.io/do-the-todo/'],
