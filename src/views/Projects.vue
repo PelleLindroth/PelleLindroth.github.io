@@ -94,7 +94,7 @@ $mobile-cutoff: 750px;
   }
 
   .page-description {
-    color: white;
+    color: #ececec;
     font-size: 2rem;
     font-weight: 300;
     grid-column: 1 / span 6;
