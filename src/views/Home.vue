@@ -25,6 +25,7 @@
       >
         <img src="../assets/github-icon.svg" alt="Github Icon" />
         <p>Se kod på GitHub</p>
+        <img src="../assets/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
       <a
         href="https://pellelindroth.github.io/brewdog-punk-wiki/"
@@ -33,11 +34,11 @@
       >
         <img src="../assets/web-icon.svg" alt="Web Icon" />
         <p>Se sidan live</p>
+        <img src="../assets/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
     </div>
     <div class="main">
       <img
-        class="main"
         @click="openModal"
         src="../assets/beerwiki-screenshot-1.png"
         alt="beerwiki-screenshot-1.png"
@@ -175,16 +176,18 @@ $mobile-cutoff: 750px;
 
   h2 {
     color: #3298af;
-    font-family: 'Righteous', cursive;
+    font-family: 'Kanit', sans-serif;
     grid-column: 1 / span 3;
     grid-row: 2;
     font-size: 4.8rem;
+    line-height: 114%;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 2.6rem;
       grid-column: 1 / span 4;
       grid-row: 3 / span 2;
       letter-spacing: -0.5px;
+      max-width: 16rem;
     }
   }
 
@@ -234,9 +237,11 @@ $mobile-cutoff: 750px;
         color: #ececec;
         font-size: 1.4rem;
         font-weight: 500;
+        margin-right: 1.5rem;
 
         @media screen and (max-width: $mobile-cutoff) {
           font-size: 1rem;
+          margin-right: 1rem;
         }
       }
     }
@@ -246,6 +251,7 @@ $mobile-cutoff: 750px;
     grid-column: 4 / span 6;
     grid-row: 2 / span 4;
     overflow: hidden;
+    border-radius: 5px;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
@@ -256,6 +262,7 @@ $mobile-cutoff: 750px;
     img {
       cursor: pointer;
       max-width: 100%;
+      object-fit: contain;
     }
   }
 
@@ -272,12 +279,14 @@ $mobile-cutoff: 750px;
     }
 
     .small1 {
+      border-radius: 5px;
       margin-right: 1.5rem;
       max-width: 12rem;
       object-fit: contain;
     }
 
     .small2 {
+      border-radius: 5px;
       margin: 0;
       max-width: 12rem;
       object-fit: contain;

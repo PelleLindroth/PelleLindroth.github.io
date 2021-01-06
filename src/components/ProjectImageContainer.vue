@@ -67,6 +67,7 @@ $mobile-cutoff: 750px;
 
   img {
     cursor: pointer;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
     margin-right: 1rem !important;
     max-width: 100%;

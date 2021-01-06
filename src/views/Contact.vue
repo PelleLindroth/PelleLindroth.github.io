@@ -11,14 +11,20 @@
         <div class="icon-container">
           <img src="../assets/github-icon.svg" alt="GitHub Icon" />
         </div>
-        GitHub (ITHS-konto)</a
-      >
+        GitHub (ITHS-konto)
+        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+      /></a>
       <a href="https://github.com/Pellin" target="_blank">
         <div class="icon-container">
           <img src="../assets/github-icon.svg" alt="GitHub Icon" />
         </div>
-        GitHub (Privat konto)</a
-      >
+        GitHub (Privat konto)
+        <img
+          class="go-icon"
+          src="../assets/go-arrow.svg"
+          alt="Arrow Right Icon"
+        />
+      </a>
       <a
         href="https://www.linkedin.com/in/pelle-lindroth-647247200/"
         target="_blank"
@@ -26,8 +32,9 @@
         <div class="icon-container">
           <img src="../assets/linkedin-icon.svg" alt="LinkedIn Icon" />
         </div>
-        LinkedIn</a
-      >
+        LinkedIn
+        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+      /></a>
       <a href="mailto:pellelindroth@gmail.com" target="_blank">
         <div class="icon-container">
           <img
@@ -36,8 +43,9 @@
             alt="Mail Icon"
           />
         </div>
-        Skicka ett mail</a
-      >
+        Skicka ett mail
+        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+      /></a>
     </div>
     <form @submit.prevent="sendEmail">
       <h2>Direktmeddelande</h2>
@@ -205,12 +213,14 @@ $mobile-cutoff: 750px;
       display: flex;
       font-size: 1.8rem;
       font-weight: 500;
+
       margin-bottom: 1rem;
       text-decoration: none;
 
       @media screen and (max-width: $mobile-cutoff) {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-bottom: 0.5rem;
+        min-height: 2.5rem;
       }
 
       .icon-container {
@@ -229,6 +239,16 @@ $mobile-cutoff: 750px;
           }
         }
       }
+
+      .go-icon {
+        margin-left: 1rem;
+        width: 2rem;
+
+        @media screen and (max-width: $mobile-cutoff) {
+          margin-left: 1rem;
+          width: 1.5rem;
+        }
+      }
     }
   }
 
@@ -245,9 +265,8 @@ $mobile-cutoff: 750px;
     }
 
     h2 {
-      font-family: 'Righteous', cursive;
+      font-family: 'Kanit', sans-serif;
       font-size: 2.4rem;
-      font-weight: 400;
       margin-bottom: 1rem;
 
       @media screen and (max-width: $mobile-cutoff) {
@@ -291,7 +310,7 @@ $mobile-cutoff: 750px;
         border: none;
         color: #ececec;
         cursor: pointer;
-        font-family: 'Righteous', cursive;
+        font-weight: 700;
         height: 4.4rem;
         margin-left: 1rem;
         outline: none;

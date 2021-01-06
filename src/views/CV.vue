@@ -329,7 +329,8 @@ $mobile-cutoff: 750px;
 
       h2 {
         color: #fcd577;
-        font-family: 'Righteous', cursive;
+        // font-family: 'Righteous', cursive;
+        font-family: 'Kanit', sans-serif;
         font-size: 3.2rem;
 
         @media screen and (max-width: $mobile-cutoff) {
@@ -377,7 +378,8 @@ $mobile-cutoff: 750px;
     h3 {
       background-color: #fcd577;
       color: #333;
-      font-family: 'Righteous', cursive;
+      // font-family: 'Righteous', cursive;
+      font-family: 'Kanit', sans-serif;
       font-size: 3rem;
       margin-bottom: 3rem;
       padding: 0.5rem 0 0.5rem 1rem;

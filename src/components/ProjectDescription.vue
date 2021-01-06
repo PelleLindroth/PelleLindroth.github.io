@@ -20,10 +20,20 @@
       <a :href="project.links[0]" class="link" target="_blank">
         <img src="../assets/github-icon.svg" alt="Github Icon" />
         <p>Se kod på GitHub</p>
+        <img
+          class="go-icon"
+          src="../assets/go-arrow.svg"
+          alt="Arrow Right Icon"
+        />
       </a>
       <a :href="project.links[1]" class="link" target="_blank">
         <img src="../assets/web-icon.svg" alt="Web Icon" />
         <p>Se sidan live</p>
+        <img
+          class="go-icon"
+          src="../assets/go-arrow.svg"
+          alt="Arrow Right Icon"
+        />
       </a>
     </div>
   </div>
@@ -57,14 +67,18 @@ $mobile-cutoff: 750px;
   }
 
   h2 {
-    font-family: 'Righteous', cursive;
+    font-family: 'Kanit', sans-serif;
     font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 114%;
     margin-bottom: 1rem;
 
     @media screen and (max-width: $mobile-cutoff) {
+      border: 1px solid #ececec;
       font-size: 2.2rem;
       letter-spacing: -0.2px;
       min-width: 30rem;
+      padding-left: 1rem;
     }
   }
 
@@ -74,7 +88,6 @@ $mobile-cutoff: 750px;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 1.1rem;
-      margin-right: 0.5rem;
     }
   }
 
@@ -82,7 +95,6 @@ $mobile-cutoff: 750px;
     .link {
       align-items: center;
       display: flex;
-
       margin-top: 5px;
       text-decoration: none;
 
@@ -91,16 +103,20 @@ $mobile-cutoff: 750px;
         width: 2rem;
 
         @media screen and (max-width: $mobile-cutoff) {
+          margin-right: 0.5rem;
           width: 1.2rem;
         }
       }
+
       p {
         color: #ececec;
         font-size: 1.4rem;
         font-weight: 500;
+        margin-right: 1rem;
 
         @media screen and (max-width: $mobile-cutoff) {
           font-size: 1rem;
+          margin-right: 0.5rem;
         }
       }
     }

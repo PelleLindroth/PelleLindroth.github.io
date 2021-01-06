@@ -87,7 +87,6 @@ $mobile-cutoff: 750px;
   @media screen and (max-width: $mobile-cutoff) {
     gap: 1rem;
     grid-template-columns: repeat(8, 1fr);
-    // grid-template-rows: repeat(auto-fill, 1.6rem);
     margin: auto;
     padding: 0 1rem;
     width: 100vw;
