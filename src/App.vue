@@ -5,13 +5,9 @@
         <img src="./assets/portfolio-logo.svg" alt="Portfolio logo"
       /></router-link>
       <nav>
-        <router-link to="/projects">{{
-          english ? 'Projects' : 'Projekt'
-        }}</router-link>
+        <router-link to="/projects">Projekt</router-link>
         <router-link to="/cv">CV</router-link>
-        <router-link to="/contact">{{
-          english ? 'Contact' : 'Kontakt'
-        }}</router-link>
+        <router-link to="/contact">Kontakt</router-link>
       </nav>
       <!-- <div v-if="english" class="flag-container" title="Language">
         <div
@@ -39,7 +35,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
 $mobile-cutoff: 650px;
 
 :root {
@@ -69,7 +66,7 @@ body {
 
   header {
     align-items: center;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #fcd577;
     display: flex;
     height: 7.7rem;
     justify-content: space-between;
@@ -78,14 +75,13 @@ body {
     padding: 0 0 3rem;
 
     @media screen and (max-width: $mobile-cutoff) {
-      border-bottom: 1px solid #ececec;
       height: 6rem;
       margin: 0 auto;
       width: 100%;
       padding: 0 1rem;
 
       img {
-        width: 14rem;
+        width: 17rem;
       }
     }
 
@@ -98,11 +94,11 @@ body {
 
       @media screen and (max-width: $mobile-cutoff) {
         margin-left: 0;
-        max-width: 16.3rem;
+        max-width: 16rem;
       }
 
       a {
-        color: #ececec;
+        color: #fcd577;
         font-size: 1.8rem;
         font-weight: 700;
         text-align: center;
@@ -110,18 +106,21 @@ body {
         min-width: 11.5rem;
 
         @media screen and (max-width: $mobile-cutoff) {
-          font-size: 1.3rem;
-
+          font-size: 1.2rem;
           min-width: 5rem;
         }
       }
 
       .router-link-active {
+        border: 1px solid #fcd577;
+        border-radius: 0.5rem;
         color: #fcd577;
         font-size: 2rem;
+        padding: 0.5rem;
 
         @media screen and (max-width: $mobile-cutoff) {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
+          min-width: 5rem;
         }
       }
     }
