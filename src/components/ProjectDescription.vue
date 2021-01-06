@@ -74,11 +74,9 @@ $mobile-cutoff: 750px;
     margin-bottom: 1rem;
 
     @media screen and (max-width: $mobile-cutoff) {
-      border: 1px solid #ececec;
       font-size: 2.2rem;
       letter-spacing: -0.2px;
       min-width: 30rem;
-      padding-left: 1rem;
     }
   }
 
