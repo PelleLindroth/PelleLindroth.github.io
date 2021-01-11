@@ -10,7 +10,7 @@ export default [
   },
   {
     color: '#FFD700',
-    description: 'Min version av Snake. Native JS, använde classes för att få tydligare kodstruktur och lärde mig om canvas. Funkar bara på desktop än så länge.',
+    description: 'Min version av Snake. Native JS, använde classes för att få tydligare kodstruktur och lärde mig om canvas.',
     id: 1,
     images: ['snake-screenshot.png'],
     links: ['https://github.com/PelleLindroth/snake', 'https://pellelindroth.github.io/snake/'],
