@@ -2,8 +2,9 @@
   <div id="app">
     <header>
       <router-link to="/">
-        <img src="./assets/portfolio-logo.svg" alt="Portfolio logo"
-      /></router-link>
+        <img src="./assets/portfolio.svg" alt="Portfolio" />
+        <h1>PELLE LINDROTH</h1>
+      </router-link>
       <nav>
         <router-link to="/projects">Projekt</router-link>
         <router-link to="/cv">CV</router-link>
@@ -59,6 +60,7 @@ body {
   cursor: default;
   font-family: 'Roboto', sans-serif;
   padding: 0 2rem;
+  -webkit-font-smoothing: antialiased;
 
   @media screen and (max-width: $mobile-cutoff) {
     padding: 0;
@@ -70,9 +72,41 @@ body {
     display: flex;
     height: 7.7rem;
     justify-content: space-between;
-    margin: 4rem auto 0;
+    margin: 2rem auto 0;
     max-width: 120rem;
-    padding: 0 0 3rem;
+    padding: 0 0 2rem;
+
+    a {
+      align-items: baseline;
+      display: flex;
+      text-decoration: none;
+      width: 60;
+    }
+
+    img {
+      align-self: center;
+      margin-right: 0.5rem;
+      margin-top: -0.3rem;
+      width: 4rem;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        max-width: 2.2rem;
+      }
+    }
+
+    h1 {
+      color: #fcd577;
+      font-family: 'Kanit', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-decoration: none;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        font-size: 2rem;
+        letter-spacing: 0.2px;
+      }
+    }
 
     @media screen and (max-width: $mobile-cutoff) {
       height: 6rem;
@@ -90,11 +124,11 @@ body {
       display: flex;
       justify-content: space-between;
       margin-left: 30rem;
-      width: 34.5rem;
+      width: 25rem;
 
       @media screen and (max-width: $mobile-cutoff) {
         margin-left: 0;
-        width: 16rem;
+        width: 15rem;
       }
 
       a {
@@ -103,25 +137,16 @@ body {
         font-weight: 700;
         text-align: center;
         text-decoration: none;
-        min-width: 11.5rem;
 
         @media screen and (max-width: $mobile-cutoff) {
           font-size: 1.2rem;
-          min-width: 5.33rem;
         }
       }
 
       .router-link-active {
-        border: 1px solid #fcd577;
         border-radius: 0.5rem;
         color: #fcd577;
-        font-size: 2rem;
-        padding: 0.5rem;
-
-        @media screen and (max-width: $mobile-cutoff) {
-          font-size: 1.2rem;
-          min-width: 5rem;
-        }
+        text-shadow: 1px 1px 30px #fff;
       }
     }
 

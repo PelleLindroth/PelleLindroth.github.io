@@ -40,27 +40,9 @@
     <div class="main">
       <img
         @click="openModal"
-        src="../assets/beerwiki-screenshot-1.png"
-        alt="beerwiki-screenshot-1.png"
+        src="../assets/beerwiki-screenshot-3.png"
+        alt="beerwiki-screenshot-3.png"
       />
-    </div>
-    <div class="thumbnails">
-      <div>
-        <img
-          @click="openModal"
-          class="small1"
-          src="../assets/beerwiki-screenshot-2.png"
-          alt="beerwiki-screenshot-2.png"
-        />
-      </div>
-      <div>
-        <img
-          class="small2"
-          @click="openModal"
-          src="../assets/beerwiki-screenshot-3.png"
-          alt="beerwiki-screenshot-3.png"
-        />
-      </div>
     </div>
   </div>
 </template>
@@ -215,7 +197,7 @@ $mobile-cutoff: 750px;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 4;
-      grid-row: 16 / span 2;
+      grid-row: 14 / span 2;
     }
 
     .link {
@@ -248,14 +230,13 @@ $mobile-cutoff: 750px;
   }
 
   .main {
-    grid-column: 4 / span 6;
-    grid-row: 2 / span 4;
+    grid-column: 4 / span 7;
+    grid-row: 2 / span 5;
     overflow: hidden;
-    border-radius: 5px;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
-      grid-row: 6 / span 7;
+      grid-row: 6 / span 9;
       object-fit: contain;
     }
 
@@ -272,6 +253,7 @@ $mobile-cutoff: 750px;
     grid-column: 4 / span 4;
     grid-row: 6;
     justify-content: flex-start;
+    overflow: hidden;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
@@ -291,11 +273,6 @@ $mobile-cutoff: 750px;
       max-width: 12rem;
       object-fit: contain;
     }
-  }
-
-  .main.div,
-  .thumbnails.div {
-    border: 2px solid #ececec;
   }
 }
 </style>
