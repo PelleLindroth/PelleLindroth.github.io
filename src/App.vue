@@ -2,13 +2,12 @@
   <div id="app">
     <header>
       <router-link to="/">
-        <img src="./assets/portfolio.svg" alt="Portfolio" />
-        <h1>PELLE LINDROTH</h1>
+        <h1><em>PELLE LINDROTH</em></h1>
       </router-link>
       <nav>
-        <router-link to="/projects">Projekt</router-link>
-        <router-link to="/cv">CV</router-link>
-        <router-link to="/contact">Kontakt</router-link>
+        <router-link to="/projects">_Projekt</router-link>
+        <router-link to="/cv">_Om mig</router-link>
+        <router-link to="/contact">_Kontakt</router-link>
       </nav>
       <!-- <div v-if="english" class="flag-container" title="Language">
         <div
@@ -36,8 +35,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Kanit:wght@700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
 $mobile-cutoff: 650px;
 
 :root {
@@ -76,22 +74,18 @@ body {
     max-width: 120rem;
     padding: 0 0 2rem;
 
+    @media screen and (max-width: $mobile-cutoff) {
+      height: 6rem;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1rem;
+    }
+
     a {
       align-items: baseline;
       display: flex;
+      min-width: 30%;
       text-decoration: none;
-      width: 60;
-    }
-
-    img {
-      align-self: center;
-      margin-right: 0.5rem;
-      margin-top: -0.3rem;
-      width: 4rem;
-
-      @media screen and (max-width: $mobile-cutoff) {
-        max-width: 2.2rem;
-      }
     }
 
     h1 {
@@ -101,6 +95,7 @@ body {
       font-weight: 700;
       letter-spacing: 1.3px;
       text-decoration: none;
+      text-shadow: 0 0 1rem #fcd577;
 
       @media screen and (max-width: $mobile-cutoff) {
         font-size: 2rem;
@@ -108,27 +103,15 @@ body {
       }
     }
 
-    @media screen and (max-width: $mobile-cutoff) {
-      height: 6rem;
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 1rem;
-
-      img {
-        width: 17rem;
-      }
-    }
-
     nav {
       align-items: center;
       display: flex;
       justify-content: space-between;
-      margin-left: 30rem;
-      width: 25rem;
+      min-width: 30rem;
 
       @media screen and (max-width: $mobile-cutoff) {
         margin-left: 0;
-        width: 15rem;
+        min-width: 15rem;
       }
 
       a {
@@ -147,29 +130,6 @@ body {
         border-radius: 0.5rem;
         color: #fcd577;
         text-shadow: 1px 1px 30px #fff;
-      }
-    }
-
-    .flag-container {
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      width: 11.5rem;
-
-      .flag {
-        background-image: url('./assets/swedish-flag.svg');
-        background-position: -0.5rem 0;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: 1px solid #ececec;
-        border-radius: 50%;
-        height: 2.7rem;
-        width: 2.7rem;
-      }
-
-      .uk {
-        background-image: url('./assets/swedish-flag.svg');
-        background-position: -1.3rem 0;
       }
     }
   }
