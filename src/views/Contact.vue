@@ -6,22 +6,26 @@
         <button @click="closeModal" class="ok-button">OK</button>
       </div>
     </div>
+
     <div class="link-container">
       <a href="https://github.com/PelleLindroth" target="_blank">
         <div class="icon-container">
-          <img src="../assets/github-icon.svg" alt="GitHub Icon" />
+          <img src="../assets/icons/github-icon.svg" alt="GitHub Icon" />
         </div>
         GitHub (ITHS-konto)
-        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+        <img
+          class="go-icon"
+          src="../assets/icons/go-arrow.svg"
+          alt="Arrow Right Icon"
       /></a>
       <a href="https://github.com/Pellin" target="_blank">
         <div class="icon-container">
-          <img src="../assets/github-icon.svg" alt="GitHub Icon" />
+          <img src="../assets/icons/github-icon.svg" alt="GitHub Icon" />
         </div>
         GitHub (Privat konto)
         <img
           class="go-icon"
-          src="../assets/go-arrow.svg"
+          src="../assets/icons/go-arrow.svg"
           alt="Arrow Right Icon"
         />
       </a>
@@ -30,23 +34,30 @@
         target="_blank"
       >
         <div class="icon-container">
-          <img src="../assets/linkedin-icon.svg" alt="LinkedIn Icon" />
+          <img src="../assets/icons/linkedin-icon.svg" alt="LinkedIn Icon" />
         </div>
         LinkedIn
-        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+        <img
+          class="go-icon"
+          src="../assets/icons/go-arrow.svg"
+          alt="Arrow Right Icon"
       /></a>
       <a href="mailto:pellelindroth@gmail.com" target="_blank">
         <div class="icon-container">
           <img
             :style="{ height: this.$root.isMobile ? '1.2rem' : '1.6rem' }"
-            src="../assets/mail-icon.svg"
+            src="../assets/icons/mail-icon.svg"
             alt="Mail Icon"
           />
         </div>
         Skicka ett mail
-        <img class="go-icon" src="../assets/go-arrow.svg" alt="Arrow Right Icon"
+        <img
+          class="go-icon"
+          src="../assets/icons/go-arrow.svg"
+          alt="Arrow Right Icon"
       /></a>
     </div>
+
     <form @submit.prevent="sendEmail">
       <h2>Direktmeddelande</h2>
       <textarea
@@ -67,6 +78,7 @@
         <button ref="sendButton">{{ buttonText }}</button>
       </div>
     </form>
+    <img class="envelope" src="../assets/pile.png" alt="Envelopes" />
   </div>
 </template>
 
@@ -142,6 +154,7 @@ $mobile-cutoff: 750px;
   grid-template-rows: repeat(12, 64px);
   margin: 4rem auto 0;
   max-width: 120rem;
+  overflow: hidden;
 
   @media screen and (max-width: $mobile-cutoff) {
     gap: 1rem;
@@ -154,7 +167,7 @@ $mobile-cutoff: 750px;
   }
 
   .messageModal {
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(20, 20, 20, 0.4);
     display: grid;
     height: 100vh;
     left: 0;
@@ -162,10 +175,11 @@ $mobile-cutoff: 750px;
     place-items: center;
     position: fixed;
     top: 0;
+    z-index: 2;
 
     .message-box {
       align-items: center;
-      background-color: #ececec;
+      background-color: rgba(236, 236, 236, 1);
       box-sizing: content-box;
       width: 40rem;
       display: flex;
@@ -188,8 +202,10 @@ $mobile-cutoff: 750px;
       .ok-button {
         background-color: #333;
         border: none;
+        border-radius: 5px;
         color: #ececec;
         cursor: pointer;
+        font-weight: 700;
         outline: none;
         padding: 1rem 4rem;
       }
@@ -258,6 +274,7 @@ $mobile-cutoff: 750px;
     grid-column: 1 / span 8;
     grid-row: 4 / span 4;
     max-width: 60rem;
+    z-index: 1;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-row: 7 / span 8;
@@ -276,7 +293,7 @@ $mobile-cutoff: 750px;
 
     input,
     textarea {
-      background-color: #ececec;
+      background-color: rgba(236, 236, 236, 0.9);
       border-radius: 0;
       color: #333;
     }
@@ -306,7 +323,7 @@ $mobile-cutoff: 750px;
       }
 
       button {
-        background-color: #008000;
+        background-color: rgba(0, 128, 0, 0.8);
         border: none;
         color: #ececec;
         cursor: pointer;
@@ -320,6 +337,20 @@ $mobile-cutoff: 750px;
           transform: scale(0.98);
         }
       }
+    }
+  }
+
+  .envelope {
+    grid-column: 3 / span 9;
+    grid-row: 1;
+    margin-top: -2;
+    width: 90rem;
+    opacity: 0.8;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-column: 3 / span 6;
+      grid-row: 4;
+      width: 40rem;
     }
   }
 }
