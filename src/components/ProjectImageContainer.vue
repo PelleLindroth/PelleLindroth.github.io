@@ -2,7 +2,7 @@
   <div
     class="image-container"
     :style="{
-      gridRow: `${project.row - (isMobile ? project.id : 0)} / span 4`,
+      gridRow: `${project.row} / span 4`,
     }"
   >
     <img
@@ -12,8 +12,9 @@
       :alt="image"
       @click="showImage"
       :style="{
-        maxHeight: getHeight,
-        display: index > 1 && isMobile ? 'none' : 'block',
+        maxHeight: '100%',
+        display: index > 0 && isMobile ? 'none' : 'block',
+        zIndex: 10 - index,
       }"
     />
   </div>
@@ -37,7 +38,7 @@ export default {
   },
   methods: {
     getImgUrl(image) {
-      return require(`../assets/${image}`)
+      return require(`../assets/phone-sceenshots/${image}`)
     },
     showImage(e) {
       let url = e.target.getAttribute('alt')
@@ -54,28 +55,27 @@ $mobile-cutoff: 750px;
   display: flex;
   flex-wrap: wrap;
   grid-column: 4 / span 8;
-  margin-top: 1rem;
-  max-height: 30rem;
+  min-height: 34rem;
 
   @media screen and (max-width: $mobile-cutoff) {
     grid-column: 4 / span 5;
-    justify-content: flex-end;
-    margin-top: 4.2rem;
-    max-height: 17.5rem;
+    justify-content: center;
+    min-height: 30rem;
     z-index: 1;
   }
 
   img {
     cursor: pointer;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    margin-right: 1rem !important;
-    max-width: 100%;
-    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    box-shadow: 0rem 0rem 4rem rgba(255, 255, 255, 0.25),
+      -10rem 2px 20rem rgba(255, 255, 255, 0.25);
+    object-fit: contain;
+    margin-right: 1rem;
+    min-height: 100%;
 
     @media screen and (max-width: $mobile-cutoff) {
       margin-bottom: 0.5rem;
-      margin-right: 0.5rem !important;
     }
   }
 }

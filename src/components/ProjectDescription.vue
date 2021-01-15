@@ -2,7 +2,7 @@
   <div
     class="description-container"
     :style="{
-      gridRow: `${project.row - (isMobile ? project.id : 0)} / span 4`,
+      gridRow: `${project.row} / span 4`,
     }"
   >
     <div>
@@ -18,20 +18,20 @@
 
     <div class="links">
       <a :href="project.links[0]" class="link" target="_blank">
-        <img src="../assets/github-icon.svg" alt="Github Icon" />
+        <img src="../assets/icons/github-icon.svg" alt="Github Icon" />
         <p>Se kod på GitHub</p>
         <img
           class="go-icon"
-          src="../assets/go-arrow.svg"
+          src="../assets/icons/go-arrow.svg"
           alt="Arrow Right Icon"
         />
       </a>
       <a :href="project.links[1]" class="link" target="_blank">
-        <img src="../assets/web-icon.svg" alt="Web Icon" />
+        <img src="../assets/icons/web-icon.svg" alt="Web Icon" />
         <p>Se sidan live</p>
         <img
           class="go-icon"
-          src="../assets/go-arrow.svg"
+          src="../assets/icons/go-arrow.svg"
           alt="Arrow Right Icon"
         />
       </a>
@@ -59,11 +59,11 @@ $mobile-cutoff: 750px;
   display: flex;
   flex-direction: column;
   grid-column: 1 / span 3;
-  justify-content: space-between;
-  max-height: 30rem;
+  justify-content: center;
 
   @media screen and (max-width: $mobile-cutoff) {
-    max-height: 21.6rem;
+    margin: 0 1.5rem 0 -1rem;
+    grid-column: 2 / span 3;
   }
 
   h2 {
@@ -71,12 +71,11 @@ $mobile-cutoff: 750px;
     font-size: 3.6rem;
     font-weight: 700;
     line-height: 114%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 2.2rem;
       letter-spacing: -0.2px;
-      min-width: 30rem;
     }
   }
 
@@ -90,10 +89,12 @@ $mobile-cutoff: 750px;
   }
 
   .links {
+    margin-top: 1.5rem;
+
     .link {
       align-items: center;
       display: flex;
-      margin-top: 5px;
+      margin-top: 0.5rem;
       text-decoration: none;
 
       img {

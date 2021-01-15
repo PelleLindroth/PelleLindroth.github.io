@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     calculateRows() {
-      let multiplier = this.$root.isMobile ? 5 : 6
+      let multiplier = this.$root.isMobile ? 6 : 7
       return `repeat(${this.projects.length * multiplier}, 64px)`
     },
   },
