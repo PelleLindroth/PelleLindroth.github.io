@@ -23,26 +23,25 @@
         class="link"
         target="_blank"
       >
-        <img src="../assets/github-icon.svg" alt="Github Icon" />
+        <img src="../assets/icons/github-icon.svg" alt="Github Icon" />
         <p>Se kod på GitHub</p>
-        <img src="../assets/go-arrow.svg" alt="Arrow Right Icon" />
+        <img src="../assets/icons/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
       <a
         href="https://pellelindroth.github.io/brewdog-punk-wiki/"
         class="link"
         target="_blank"
       >
-        <img src="../assets/web-icon.svg" alt="Web Icon" />
+        <img src="../assets/icons/web-icon.svg" alt="Web Icon" />
         <p>Se sidan live</p>
-        <img src="../assets/go-arrow.svg" alt="Arrow Right Icon" />
+        <img src="../assets/icons/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
     </div>
-    <div class="main">
-      <img
-        @click="openModal"
-        src="../assets/beerwiki-screenshot-3.png"
-        alt="beerwiki-screenshot-3.png"
-      />
+    <div class="hero-container">
+      <img src="../assets/macbook-vector-small.png" alt="MacBook Pro" />
+      <video ref="video" loop muted playsinline>
+        <source src="../assets/brewdog-demo.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
 </template>
@@ -57,6 +56,9 @@ export default {
   name: 'Home',
   components: {
     ImageModal,
+  },
+  mounted() {
+    this.$refs.video.play()
   },
   computed: {
     english() {
@@ -191,13 +193,43 @@ $mobile-cutoff: 750px;
     }
   }
 
+  .hero-container {
+    grid-column: 4 / span 7;
+    grid-row: 2 / span 6;
+    overflow: hidden;
+    margin-top: -1rem;
+    min-width: 69rem;
+    position: relative;
+
+    @media screen and (max-width: $mobile-cutoff) {
+      grid-column: 1 / span 8;
+      grid-row: 6 / span 9;
+      margin-top: 1rem;
+      min-width: 80%;
+      object-fit: contain;
+    }
+
+    video {
+      max-width: 70%;
+      position: absolute;
+      outline: none;
+      top: 9%;
+      left: 15.5%;
+    }
+
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
   .links {
     grid-column: 1 / span 3;
     grid-row: 6;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 4;
-      grid-row: 14 / span 2;
+      grid-row: 15 / span 2;
     }
 
     .link {
@@ -226,52 +258,6 @@ $mobile-cutoff: 750px;
           margin-right: 1rem;
         }
       }
-    }
-  }
-
-  .main {
-    grid-column: 4 / span 7;
-    grid-row: 2 / span 5;
-    overflow: hidden;
-
-    @media screen and (max-width: $mobile-cutoff) {
-      grid-column: 1 / span 8;
-      grid-row: 6 / span 9;
-      object-fit: contain;
-    }
-
-    img {
-      cursor: pointer;
-      max-width: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .thumbnails {
-    cursor: pointer;
-    display: flex;
-    grid-column: 4 / span 4;
-    grid-row: 6;
-    justify-content: flex-start;
-    overflow: hidden;
-
-    @media screen and (max-width: $mobile-cutoff) {
-      grid-column: 1 / span 8;
-      grid-row: 13 / span 3;
-    }
-
-    .small1 {
-      border-radius: 5px;
-      margin-right: 1.5rem;
-      max-width: 12rem;
-      object-fit: contain;
-    }
-
-    .small2 {
-      border-radius: 5px;
-      margin: 0;
-      max-width: 12rem;
-      object-fit: contain;
     }
   }
 }
