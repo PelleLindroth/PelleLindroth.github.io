@@ -135,7 +135,7 @@ body {
   }
 
   footer {
-    background-color: #555555;
+    background-color: rgba(255, 2555, 255, 0.1);
     display: grid;
     height: 8rem;
     margin-left: -2rem;
