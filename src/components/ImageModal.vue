@@ -3,7 +3,7 @@
     <img
       class="close-icon"
       @click="closeModal"
-      :src="getImgUrl('clear-icon.svg')"
+      :src="require('../assets/icons/clear-icon.svg')"
       alt="Close Icon"
     />
     <img :src="getImgUrl(image)" :alt="image" />
@@ -17,7 +17,7 @@ export default {
       this.$emit('closeModal', e)
     },
     getImgUrl(image) {
-      return require(`../assets/${image}`)
+      return require(`../assets/phone-sceenshots/${image}`)
     },
   },
   props: {
@@ -38,7 +38,7 @@ $mobile-cutoff: 750px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 20;
 
   @media screen and (max-width: $mobile-cutoff) {
     background-color: rgba(20, 20, 20, 0.9);
@@ -58,11 +58,10 @@ $mobile-cutoff: 750px;
 
   img {
     margin: auto;
-    height: 70vh;
+    height: 80vh;
 
     @media screen and (max-width: $mobile-cutoff) {
-      height: auto;
-      width: 90vw;
+      height: 75vh;
     }
   }
 }
