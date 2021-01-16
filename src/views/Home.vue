@@ -51,7 +51,7 @@ import ImageModal from '../components/ImageModal'
 
 export default {
   created() {
-    document.title = 'Pelle Lindroth | Portfolio'
+    document.title = 'Pelle Lindroth | Home'
   },
   name: 'Home',
   components: {
