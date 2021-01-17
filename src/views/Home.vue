@@ -1,11 +1,5 @@
 <template>
   <div class="home-view-wrapper">
-    <ImageModal
-      v-if="showModal"
-      @closeModal="closeModal"
-      :showModal="showModal"
-      :image="modalImage"
-    />
     <div class="title">
       <em>{{ english ? 'Latest project:' : 'Senaste projekt:' }}</em>
     </div>
@@ -47,39 +41,17 @@
 </template>
 
 <script>
-import ImageModal from '../components/ImageModal'
-
 export default {
   created() {
-    document.title = 'Pelle Lindroth | Home'
+    document.title = 'Pelle Lindroth'
   },
   name: 'Home',
-  components: {
-    ImageModal,
-  },
   mounted() {
     this.$refs.video.play()
   },
   computed: {
     english() {
       return this.$root.english
-    },
-  },
-  data() {
-    return {
-      modalImage: null,
-      showModal: false,
-    }
-  },
-  methods: {
-    closeModal() {
-      this.showModal = false
-      document.body.style.overflow = 'scroll'
-    },
-    openModal(e) {
-      this.modalImage = e.target.getAttribute('alt')
-      this.showModal = true
-      document.body.style.overflow = 'hidden'
     },
   },
 }

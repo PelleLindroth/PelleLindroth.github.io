@@ -10,7 +10,7 @@
       :key="image.url"
       :src="getImgUrl(image)"
       :alt="image"
-      @click="showImage"
+      @click="showModal"
       :style="{
         maxHeight: '100%',
         display: index > 0 && isMobile ? 'none' : 'block',
@@ -40,9 +40,10 @@ export default {
     getImgUrl(image) {
       return require(`../assets/phone-sceenshots/${image}`)
     },
-    showImage(e) {
-      let url = e.target.getAttribute('alt')
-      this.$emit('openModal', url)
+    showModal(e) {
+      let index = this.project.images.findIndex(image => image == e.target.alt)
+
+      this.$emit('openModal', this.project.images, index)
     },
   },
 }

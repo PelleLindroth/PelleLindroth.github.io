@@ -6,12 +6,46 @@
       :src="require('../assets/icons/clear-icon.svg')"
       alt="Close Icon"
     />
-    <img :src="getImgUrl(image)" :alt="image" />
+    <img
+      @click="previousImage"
+      class="arrow"
+      :src="require('../assets/icons/arrow-left.svg')"
+      alt="Left arrow"
+    />
+    <img
+      class="screenshot"
+      ref="screenshot"
+      :src="getImgUrl(currentImage)"
+      :alt="currentImage"
+    />
+    <img
+      @click="nextImage"
+      class="arrow"
+      :src="require('../assets/icons/arrow-right.svg')"
+      alt="Right arrow"
+    />
   </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    currentImage() {
+      if (this.index < 0 && this.index % this.images.length != 0) {
+        return this.images[
+          this.images.length +
+            ((this.index % this.images.length) % this.images.length)
+        ]
+      } else {
+        return this.images[this.index % this.images.length]
+      }
+    },
+  },
+  data() {
+    return {
+      index: this.imageIndex,
+    }
+  },
   methods: {
     closeModal(e) {
       this.$emit('closeModal', e)
@@ -19,9 +53,16 @@ export default {
     getImgUrl(image) {
       return require(`../assets/phone-sceenshots/${image}`)
     },
+    nextImage() {
+      this.index++
+    },
+    previousImage() {
+      this.index--
+    },
   },
   props: {
-    image: String,
+    images: Array,
+    imageIndex: Number,
   },
 }
 </script>
@@ -34,6 +75,7 @@ $mobile-cutoff: 750px;
   background-color: rgba(20, 20, 20, 0.9);
   min-height: 100vh;
   display: flex;
+  justify-content: space-around;
   min-width: 100vw;
   position: fixed;
   top: 0;
@@ -49,19 +91,19 @@ $mobile-cutoff: 750px;
     position: fixed;
     right: 3rem;
     top: 3rem;
-    max-height: 5rem;
-
-    @media screen and (max-width: $mobile-cutoff) {
-      max-width: 5rem;
-    }
+    max-width: 5rem;
   }
 
-  img {
-    margin: auto;
-    height: 80vh;
+  .arrow {
+    cursor: pointer;
+    max-width: 2rem;
+  }
 
+  .screenshot {
+    height: 80vh;
     @media screen and (max-width: $mobile-cutoff) {
-      height: 75vh;
+      height: auto;
+      width: 70vw;
     }
   }
 }

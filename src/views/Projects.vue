@@ -8,7 +8,8 @@
         v-if="showModal"
         @closeModal="closeModal"
         :showModal="showModal"
-        :image="modalImage"
+        :images="modalImages"
+        :imageIndex="modalIndex"
       />
       <div class="page-description">
         <em
@@ -55,7 +56,8 @@ export default {
   },
   data() {
     return {
-      modalImage: null,
+      modalImages: [],
+      modalIndex: 0,
       projects,
       showModal: false,
     }
@@ -65,8 +67,9 @@ export default {
       this.showModal = false
       document.body.style.overflow = 'scroll'
     },
-    openModal(e) {
-      this.modalImage = e
+    openModal(images, index) {
+      this.modalImages = images
+      this.modalIndex = index
       this.showModal = true
       document.body.style.overflow = 'hidden'
     },
