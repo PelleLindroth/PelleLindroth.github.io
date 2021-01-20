@@ -9,7 +9,7 @@
       Brewdogs eget
       <a class="api-link" href="https://punkapi.com/" target="_blank"
         >Punk API</a
-      >. Jag provade att göra om projektet i Vue. OBS! Ej mobilanpassad ännu.
+      >. Jag provade att göra om projektet i Vue.
     </p>
     <div class="links">
       <a
