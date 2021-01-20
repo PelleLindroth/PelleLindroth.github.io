@@ -5,11 +5,11 @@
     </div>
     <h2>Brewdog Punk Wiki</h2>
     <p class="project-description">
-      Skolprojekt i Native JS-kursen på ITHS, byggt med hjälp av bryggeriet
-      Brewdogs eget
+      Skolprojekt byggt i Vue med hjälp av bryggeriet Brewdogs eget
       <a class="api-link" href="https://punkapi.com/" target="_blank"
         >Punk API</a
-      >. Jag provade att göra om projektet i Vue.
+      >. Låter användaren slumpa fram öl ur sortimentet och även söka efter öl
+      utifrån ett antal parameterar.
     </p>
     <div class="links">
       <a
@@ -155,8 +155,9 @@ $mobile-cutoff: 750px;
 
     @media screen and (max-width: $mobile-cutoff) {
       font-size: 1rem;
-      grid-column: 5 / span 4;
+      grid-column: 4 / span 5;
       grid-row: 3 / span 3;
+      margin-top: 0.5rem;
     }
 
     a {
