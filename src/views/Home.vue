@@ -1,7 +1,7 @@
 <template>
   <div class="home-view-wrapper">
     <div class="title">
-      <em>{{ english ? 'Latest project:' : 'Senaste projekt:' }}</em>
+      <em>Senaste projekt</em>
     </div>
     <h2>Brewdog Punk Wiki</h2>
     <p class="project-description">
@@ -48,11 +48,6 @@ export default {
   name: 'Home',
   mounted() {
     this.$refs.video.play()
-  },
-  computed: {
-    english() {
-      return this.$root.english
-    },
   },
 }
 </script>

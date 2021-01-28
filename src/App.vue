@@ -9,13 +9,6 @@
         <router-link to="/cv">_Om mig</router-link>
         <router-link to="/contact">_Kontakt</router-link>
       </nav>
-      <!-- <div v-if="english" class="flag-container" title="Language">
-        <div
-          class="flag"
-          :class="{ uk: english }"
-          @click="this.$root.toggleLanguage"
-        />
-      </div> -->
     </header>
     <router-view />
     <footer>
@@ -23,16 +16,6 @@
     </footer>
   </div>
 </template>
-
-<script>
-export default {
-  // computed: {
-  //   english() {
-  //     return this.$root.english
-  //   },
-  // },
-}
-</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Kanit:wght@700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
@@ -150,11 +133,11 @@ body {
     p {
       color: #fcd577;
       font-size: 1.5rem;
-      font-weight: 500;
+      font-weight: 700;
 
       @media screen and (max-width: $mobile-cutoff) {
         font-size: 1.2rem;
-        font-weight: 300;
+        font-weight: 500;
       }
     }
   }
