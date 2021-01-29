@@ -1,16 +1,10 @@
 <template>
   <div class="home-view-wrapper">
     <div class="title">
-      <em>Senaste projekt</em>
+      <em>{{ $t('home.title') }}</em>
     </div>
     <h2>Brewdog Punk Wiki</h2>
-    <p class="project-description">
-      Skolprojekt byggt i Vue med hjälp av bryggeriet Brewdogs eget
-      <a class="api-link" href="https://punkapi.com/" target="_blank"
-        >Punk API</a
-      >. Låter användaren slumpa fram öl ur sortimentet och även söka efter öl
-      utifrån ett antal parameterar.
-    </p>
+    <p class="project-description" v-html="$t('home.project-description')"></p>
     <div class="links">
       <a
         href="https://github.com/PelleLindroth/brewdog-punk-wiki"
@@ -18,7 +12,7 @@
         target="_blank"
       >
         <img src="../assets/icons/github-icon.svg" alt="Github Icon" />
-        <p>Se kod på GitHub</p>
+        <p>{{ $t('projects.links.github') }}</p>
         <img src="../assets/icons/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
       <a
@@ -27,7 +21,7 @@
         target="_blank"
       >
         <img src="../assets/icons/web-icon.svg" alt="Web Icon" />
-        <p>Se sidan live</p>
+        <p>{{ $t('projects.links.live') }}</p>
         <img src="../assets/icons/go-arrow.svg" alt="Arrow Right Icon" />
       </a>
     </div>
@@ -155,9 +149,10 @@ $mobile-cutoff: 750px;
       margin-top: 0.5rem;
     }
 
-    a {
+    & /deep/ .api-link {
       color: #ececec;
       text-decoration: none;
+      font-weight: 500;
     }
   }
 

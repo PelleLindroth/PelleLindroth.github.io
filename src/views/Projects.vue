@@ -12,11 +12,7 @@
         :imageIndex="modalIndex"
       />
       <div class="page-description">
-        <em
-          >Projekt i urval. Skoluppgifter och grejer jag pysslat med innan
-          utbildningen och vid sidan av. Teknikerna växlar mellan React, Vue och
-          Native Javascript (ES6).</em
-        >
+        <em v-html="$t('projects.page-description')"> </em>
       </div>
       <ProjectDescription
         v-for="project of this.projects"
@@ -50,9 +46,14 @@ export default {
       let multiplier = this.$root.isMobile ? 6 : 7
       return `repeat(${this.projects.length * multiplier}, 64px)`
     },
+    title() {
+      return this.$root.$i18n.locale == 'sv'
+        ? 'Pelle Lindroth | Projekt'
+        : 'Pelle Lindroth | Projects'
+    },
   },
-  created() {
-    document.title = 'Pelle Lindroth | Projekt'
+  updated() {
+    document.title = this.title
   },
   data() {
     return {
@@ -61,6 +62,9 @@ export default {
       projects,
       showModal: false,
     }
+  },
+  created() {
+    document.title = this.title
   },
   methods: {
     closeModal() {

@@ -13,14 +13,15 @@
       >
         {{ project.title }}
       </h2>
-      <p v-html="project.description"></p>
+      <p v-html="$t(`projects.descriptions.${project.title}`)"></p>
     </div>
 
     <div class="links">
       <a :href="project.links[0]" class="link" target="_blank">
         <img src="../assets/icons/github-icon.svg" alt="Github Icon" />
-        <p>Se kod på GitHub</p>
+        <p>{{ $t('projects.links.github') }}</p>
         <img
+          v-if="!this.$root.isMobile"
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
           alt="Arrow Right Icon"
@@ -28,8 +29,9 @@
       </a>
       <a :href="project.links[1]" class="link" target="_blank">
         <img src="../assets/icons/web-icon.svg" alt="Web Icon" />
-        <p>Se sidan live</p>
+        <p>{{ $t('projects.links.live') }}</p>
         <img
+          v-if="!this.$root.isMobile"
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
           alt="Arrow Right Icon"

@@ -4,11 +4,13 @@
       <router-link to="/">
         <h1><em>PELLE LINDROTH</em></h1>
       </router-link>
+
       <nav>
-        <router-link to="/projects">_Projekt</router-link>
-        <router-link to="/cv">_Om mig</router-link>
-        <router-link to="/contact">_Kontakt</router-link>
+        <router-link to="/projects">{{ $t('menu.projects') }}</router-link>
+        <router-link to="/cv">{{ $t('menu.about') }}</router-link>
+        <router-link to="/contact">{{ $t('menu.contact') }}</router-link>
       </nav>
+      <img class="flag" @click="changeLocale" :src="getFlagIcon" alt="" />
     </header>
     <router-view />
     <footer>
@@ -16,6 +18,29 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    getFlagIcon() {
+      return require(`@/assets/icons/lang-${this.flag}-icon.png`)
+    },
+  },
+  data() {
+    return {
+      flag: 'en',
+      sv: true,
+    }
+  },
+  methods: {
+    changeLocale() {
+      this.sv = !this.sv
+      this.flag = this.sv ? 'en' : 'sv'
+      this.$root.$i18n.locale = this.sv ? 'sv' : 'en'
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Kanit:wght@700&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
@@ -86,10 +111,24 @@ body {
       }
     }
 
+    .flag {
+      border-radius: 50%;
+      box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      margin-left: 1rem;
+      width: 2.5rem;
+
+      @media screen and (max-width: $mobile-cutoff) {
+        margin-left: 0;
+        width: 1.5rem;
+      }
+    }
+
     nav {
       align-items: center;
       display: flex;
       justify-content: space-between;
+      margin-left: auto;
       min-width: 30rem;
 
       @media screen and (max-width: $mobile-cutoff) {

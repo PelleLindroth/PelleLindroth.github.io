@@ -1,3 +1,87 @@
 {
-  "message": "hello i18n !!"
+  "menu": {
+    "projects": "_Projekt",
+    "about": "_Om mig",
+    "contact": "_Kontakt"
+  },
+  "home": {
+    "title": "Senaste projekt",
+    "project-description": "Skolprojekt byggt i Vue med hjälp av bryggeriet Brewdogs eget <a class='api-link' href='https://punkapi.com/' target='_blank'>Punk API</a>. Låter användaren slumpa fram öl ur sortimentet och även söka efter öl utifrån ett antal parameterar."
+  },
+  "projects": {
+    "links": {
+      "github": "Se kod på GitHub",
+      "live": "Se sidan live"
+    },
+    "page-description": "Projekt i urval. Skoluppgifter och grejer jag pysslat med innan utbildningen och vid sidan av. Teknikerna växlar mellan React, Vue och Native Javascript (ES6).",
+    "descriptions": {
+      "Snake": "Min version av Snake. Native JS, använde classes för att få tydligare kodstruktur och lärde mig om canvas.",
+      "Bandfeud": "Ett spel jag byggde medan jag började lära mig Javascript, Node och React. Den gamla hederliga bandleken i browserversion. Använder <a target='_blank' href='https://www.discogs.com/developers' style='color: #ececec; text-decoration: none; font-weight: 400'>Discogs API</a> och sparar band och highscores med MongoDB Atlas.",
+      "Assembly Interpreter": "Uppgiften var att skriva en enkel assembler-tolkare som accepterade ett urval kommandon och utförde dem. Har även en debugger!",
+      "Do the Todo": "Skoluppgift. En enkel Todo-app i Vue. Använder Firebase Realtime Database för att spara användarnas todos, och Firebase Authentication för inloggning."
+    }
+  },
+  "cv": {
+    "intro-one": "Jag går för närvarande första året på den 2-åriga Javascriptutbildningen på IT-Högskolan i Stockholm. Utbildningen innefattar förutom frontend- och backendutveckling i Javascript även grafisk design och UX, crossplatform-utveckling, agila arbetsmetoder och mycket annat.",
+    "intro-two": "<br>I min framtida yrkesroll hoppas jag få tillfälle att arbeta både med frontend- och backend, kanske helst med lutning åt det senare. Jag trivs bra när jag får bygga nya saker och lösa problem och eftersom jag ägnat en stor del av livet åt musik har jag lätt att se likheter mellan programmering och musikskapande. Den kick jag brukade få av att skapa musik och text får jag numera mestadels genom att koda... <br /><br />",
+    "intro-three": "Jag söker nu LIA-praktik för hösten 2021. Om du tror att jag skulle passa in på ditt företag, ",
+    "where": "Var: ",
+    "when": "När: ",
+    "skills": {
+      "skill-header": "KOMPETENS",
+      "skill-one": "Språk",
+      "skill-two": "Bibliotek & ramverk",
+      "skill-three": "Backend",
+      "skill-four": "Databashantering & autentisering",
+      "skill-five": "Mjukvara",
+      "skill-six": "Testning"
+    },
+    "occupations": {
+      "occ-header": "TIDIGARE JOBB (I URVAL)",
+      "occ-one": "Copywriter / SEO writer",
+      "occ-one-where": "Defiso media",
+      "occ-one-when": "2018-2020",
+      "occ-one-description": "Skrev content till kunders landningssidor och till deras egna hemsidor. I jobbet ingick mycket research, viss kundkontakt, design och publicering via CMS samt såklart en hel del skrivande.",
+      "occ-two": "Kompositörsuppdrag",
+      "occ-two-where": "Uppsala Stadsteater",
+      "occ-two-when": "2018",
+      "occ-two-description": "Skrev musik och texter till föreställningen Uppgång & Fall på Uppsala Stadsteater. Jobbet innefattade även inspelning av musiken och sångrep med skådespelarna.",
+      "occ-three": "Aktivitetscoach / vårdare",
+      "occ-three-where": "Stockholms kommun / Frösunda LSS",
+      "occ-three-when": "Periodvis 2001 - 2017",
+      "occ-three-description": "Har haft flera olika arbeten inom LSS, både på gruppboenden och i daglig verksamhet. Förutom rena omsorgstjänster har jobbet innefattat fysiskt rehab- och terapiarbete, arbete med alternativa kommunikationsformer och handledning i exempelvis musik och teater.",
+      "occ-four": "Musiker",
+      "occ-four-where": "Frilans",
+      "occ-four-when": "1992-",
+      "occ-four-description": "Skrivit, spelat in, släppt musik och turnerat både solo och med en rad grupper."
+    },
+    "education": {
+      "edu-header": "EDUCATION",
+      "edu-one": "Javascriptutveckling",
+      "edu-one-where": "IT-Högskolan i Stockholm",
+      "edu-one-when": "Aug 2020 - Jun 2022",
+      "edu-two": "OOP with Java 1 & 2",
+      "edu-two-where": "Helsingfors Universitet (online)",
+      "edu-two-when": "Dec 2019 - Feb 2020",
+      "edu-three": "Historia",
+      "edu-three-where": "Södertörns Högskola",
+      "edu-three-when": "Jan 2003 - Maj 2003",
+      "edu-four": "Engelska och engelsk litteratur",
+      "edu-four-where": "Stockholms Universitet",
+      "edu-four-when": "Aug 2001 - Jun 2002",
+      "edu-five": "Musikvetenskap",
+      "edu-five-where": "Stockholms Universitet",
+      "edu-five-when": "Aug 2000 - Jun 2001"
+    }
+  },
+  "contact": {
+    "gh-iths": "GitHub (ITHS-konto)",
+    "gh-private": "GitHub (privat)",
+    "linked-in": "LinkedIn",
+    "mail": "Skicka ett mail",
+    "direct-message": {
+      "dm-header": "Direktmeddelande",
+      "dm-mail": "Din mailadress (valfritt)"
+    }
+  }
 }

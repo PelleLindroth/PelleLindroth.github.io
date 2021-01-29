@@ -1,3 +1,87 @@
 {
-  "message": "hello i18n !!"
+  "menu": {
+    "projects": "_Projects",
+    "about": "_About me",
+    "contact": "_Contact"
+  },
+  "home": {
+    "title": "Latest project",
+    "project-description": "School project built in Vue, using Brewdogs own <a class='api-link' href='https://punkapi.com/' target='_blank'>Punk API</a>. Allows the user to randomize beers from the collection and also search for specific beers by a few given parameters."
+  },
+  "projects": {
+    "links": {
+      "github": "View code on GitHub",
+      "live": "View page live"
+    },
+    "page-description": "Selected projects. School assignments and stuff I've been working on before the program and on the side. Techniques vary between React, Vue and Native Javascript (ES6).",
+    "descriptions": {
+      "Snake": "My version of Snake. Native JS, used classes to get a clearer code structure and learned about canvas.",
+      "Bandfeud": "An 'I spy'-game for the browser, built while I was starting to learn Javascript, Node and React.  Uses the <a target='_blank' href='https://www.discogs.com/developers' style='color: #ececec; text-decoration: none; font-weight: 400'>Discogs API</a> and stores bands and highscores with MongoDB Atlas.",
+      "Assembly Interpreter": "The assignment was to write a simple assembly interpreter that accepts a range of commands and executes them. Comes with a debugger!",
+      "Do the Todo": "School assignment. A simple Todo app in Vue. Uses the Firebase Realtime Database to save the users todos, and Firebase Authentication for signing in users."
+    }
+  },
+  "cv": {
+    "intro-one": "I’m currently attending my first year of the two-year JavaScript Developer program at IT-Högskolan in Stockholm. Besides frontend and backend development with JS, the program also includes graphic design and UX, crossplatform development, agile work methods and much more.",
+    "intro-two": "<br>In my future profession I hope to have the opportunity to work on both the frontend and the backend, perhaps leaning slightly towards the latter. I enjoy coming up with new ideas, building things and solving problems. Having spent a lot of my life making music, I see a lot of similarities between coding and music writing. The kicks I used to get from music I mostly get from coding nowadays...<br /><br />",
+    "intro-three": "My first LIA internship is in the fall of 2021. If you think I would be a good fit at your company, please ",
+    "where": "Where:",
+    "when": "When:",
+    "skills": {
+      "skill-header": "SKILLS",
+      "skill-one": "Languages",
+      "skill-two": "Libraries & frameworks",
+      "skill-three": "Backend",
+      "skill-four": "Database management & auth",
+      "skill-five": "Software",
+      "skill-six": "Testing"
+    },
+    "occupations": {
+      "occ-header": "PREVIOUS OCCUPATIONS",
+      "occ-one": "Copywriter / SEO writer",
+      "occ-one-where": "Defiso media",
+      "occ-one-when": "2018-2020",
+      "occ-one-description": "Wrote content for customers' landing pages and websites. The work included a lot of research, some amount of customer relations, design, publishing through a CMS and of course a whole lot of writing in both Swedish and English.",
+      "occ-two": "Composer",
+      "occ-two-where": "Uppsala Stadsteater",
+      "occ-two-when": "2018",
+      "occ-two-description": "Wrote music and lyrics for the production 'Uppgång & Fall' at Uppsala Stadsteater. The work also included recording the music and rehearsing with the actors.",
+      "occ-three": "Activity coach / Caretaker",
+      "occ-three-where": "Stockholm City Health department / Frösunda LSS",
+      "occ-three-when": "Periodically 2001 - 2017",
+      "occ-three-description": "I've had a lot of different jobs at group homes and day care centers, working with mentally disabled people. Apart from care services the work has included fysical therapy, alternative communication and coaching in music and acting.",
+      "occ-four": "Musician",
+      "occ-four-where": "Freelance",
+      "occ-four-when": "1992-",
+      "occ-four-description": "Written, recorded and released music and toured both solo and with various groups."
+    },
+    "education": {
+      "edu-header": "EDUCATION",
+      "edu-one": "Javascript Development",
+      "edu-one-where": "IT-Högskolan Stockholm",
+      "edu-one-when": "Aug 2020 - Jun 2022",
+      "edu-two": "OOP with Java 1 & 2",
+      "edu-two-where": "Helsinki University (online)",
+      "edu-two-when": "Dec 2019 - Feb 2020",
+      "edu-three": "History",
+      "edu-three-where": "Södertörn University",
+      "edu-three-when": "Jan 2003 - Maj 2003",
+      "edu-four": "English and English literature",
+      "edu-four-where": "Stockholm University",
+      "edu-four-when": "Aug 2001 - Jun 2002",
+      "edu-five": "Musicology",
+      "edu-five-where": "Stockholm University",
+      "edu-five-when": "Aug 2000 - Jun 2001"
+    }
+  },
+  "contact": {
+    "gh-iths": "GitHub (ITHS account)",
+    "gh-private": "GitHub (private)",
+    "linked-in": "LinkedIn",
+    "mail": "Send an email",
+    "direct-message": {
+      "dm-header": "Direct message",
+      "dm-mail": "Your email address (optional)"
+    }
+  }
 }

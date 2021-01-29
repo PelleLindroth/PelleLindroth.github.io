@@ -3,21 +3,17 @@
     <div class="presentation-container">
       <div class="presentation">
         <p>
-          <img src="@/assets/profile-picture.png" alt="Profile picture" />
-          Jag går för närvarande första året på den 2-åriga
-          Javascriptutbildningen på IT-Högskolan i Stockholm. Utbildningen
-          innefattar förutom frontend- och backendutveckling i Javascript även
-          grafisk design och UX, crossplatform-utveckling, agila arbetsmetoder
-          och mycket annat.<br /><br />I min framtida yrkesroll hoppas jag få
-          tillfälle att arbeta både med frontend- och backend, kanske helst med
-          lutning åt det senare. Jag trivs bra när jag får bygga nya saker och
-          lösa problem och eftersom jag ägnat en stor del av livet åt musik har
-          jag lätt att se likheter mellan programmering och musikskapande. Den
-          kick jag brukade få från att skapa musik och text får jag numera
-          mestadels genom att koda... <br /><br />Jag söker nu LIA-praktik för
-          hösten 2021. Om du tror att jag skulle passa in på ditt företag,
-          <router-link to="/contact">hör gärna av dig</router-link>!
+          <img :src="getProfilePic" alt="Profile picture" />
+          {{ $t('cv.intro-one') }}
         </p>
+        <p v-html="$t('cv.intro-two')"></p>
+        <p>
+          {{ $t('cv.intro-three')
+          }}<span @click="$router.push('/contact')">{{
+            $root.$i18n.locale === 'sv' ? 'hör gärna av dig!' : 'get in touch!'
+          }}</span>
+        </p>
+
         <img
           class="arrow"
           src="@/assets/icons/arrow-down.svg"
@@ -27,10 +23,12 @@
     </div>
     <div class="cv-container">
       <section class="skills">
-        <h3><em>KOMPETENS</em></h3>
+        <h3>
+          <em>{{ $t('cv.skills.skill-header') }}</em>
+        </h3>
         <div class="skills-content-boxes">
           <div class="skills-content">
-            <p>Språk</p>
+            <p>{{ $t('cv.skills.skill-one') }}</p>
 
             <ul>
               <li>
@@ -71,7 +69,7 @@
                 CSS 3
               </li>
             </ul>
-            <p>Bibliotek och ramverk</p>
+            <p>{{ $t('cv.skills.skill-two') }}</p>
 
             <ul>
               <li>
@@ -108,7 +106,7 @@
                 SASS
               </li>
             </ul>
-            <p>Backend</p>
+            <p>{{ $t('cv.skills.skill-three') }}</p>
 
             <ul>
               <li>
@@ -123,7 +121,7 @@
             </ul>
           </div>
           <div class="skills-content">
-            <p>Databashantering & autentisering</p>
+            <p>{{ $t('cv.skills.skill-four') }}</p>
 
             <ul>
               <li>
@@ -145,7 +143,7 @@
                 Google Firebase
               </li>
             </ul>
-            <p>Mjukvara</p>
+            <p>{{ $t('cv.skills.skill-five') }}</p>
 
             <ul>
               <li>
@@ -204,7 +202,7 @@
               </li>
             </ul>
 
-            <p>Testning</p>
+            <p>{{ $t('cv.skills.skill-six') }}</p>
 
             <ul>
               <li>
@@ -221,92 +219,140 @@
         </div>
       </section>
       <section class="jobs">
-        <h3><em>TIDIGARE JOBB (I URVAL)</em></h3>
+        <h3>
+          <em>{{ $t('cv.occupations.occ-header') }}</em>
+        </h3>
         <div class="job-boxes">
           <div class="job-box">
-            <h4>Copywriter / SEO writer</h4>
+            <h4>{{ $t('cv.occupations.occ-one') }}</h4>
             <hr />
-            <p><span>Var: </span>Defiso Media</p>
-            <p><span>När: </span>2018-2020</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.occupations.occ-one-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.occupations.occ-one-when') }}
+            </p>
             <hr class="invisible" />
             <p class="job-description">
-              Skrev content till kunders landningssidor och till deras egna
-              hemsidor. I jobbet ingick mycket research, viss kundkontakt,
-              design och publicering via CMS samt såklart en hel del skrivande.
+              {{ $t('cv.occupations.occ-one-description') }}
             </p>
           </div>
           <div class="job-box">
-            <h4>Kompositörsuppdrag</h4>
+            <h4>{{ $t('cv.occupations.occ-two') }}</h4>
             <hr />
-            <p><span>Var: </span>Uppsala Stadsteater</p>
-            <p><span>När: </span>2018</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.occupations.occ-two-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.occupations.occ-two-when') }}
+            </p>
             <hr class="invisible" />
             <p class="job-description">
-              Skrev musik och texter till föreställningen Uppgång & Fall på
-              Uppsala Stadsteater. Jobbet innefattade även inspelning av musiken
-              och sångrep med skådespelarna.
+              {{ $t('cv.occupations.occ-two-description') }}
             </p>
           </div>
           <div class="job-box">
-            <h4>Aktivitetscoach / vårdare</h4>
+            <h4>{{ $t('cv.occupations.occ-three') }}</h4>
             <hr />
-            <p><span>Var: </span>Stockholms kommun / Frösunda LSS</p>
-            <p><span>När: </span>Periodvis 2001 - 2017</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.occupations.occ-three-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.occupations.occ-three-when') }}
+            </p>
             <hr class="invisible" />
             <p class="job-description">
-              Har haft flera olika arbeten inom LSS, både på gruppboenden och i
-              daglig verksamhet. Förutom rena omsorgstjänster har jobbet
-              innefattat fysiskt rehab- och terapiarbete, arbete med alternativa
-              kommunikationsformer och handledning i exempelvis musik och
-              teater.
+              {{ $t('cv.occupations.occ-three-description') }}
             </p>
           </div>
           <div class="job-box">
-            <h4>Musiker</h4>
+            <h4>{{ $t('cv.occupations.occ-four') }}</h4>
             <hr />
-            <p><span>Var: </span>Frilans</p>
-            <p><span>När: </span>1992-</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.occupations.occ-four-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.occupations.occ-four-when') }}
+            </p>
             <hr class="invisible" />
             <p class="job-description">
-              Skrivit, spelat in och släppt musik och turnerat med en rad
-              grupper som Moder Jords Massiva, Hynek, The Chrysler, Liljor och
-              med soloprojektet Parken.
+              {{ $t('cv.occupations.occ-four-description') }}
             </p>
           </div>
         </div>
       </section>
       <section class="education">
-        <h3><em>UTBILDNINGAR</em></h3>
+        <h3>
+          <em>{{ $t('cv.education.edu-header') }}</em>
+        </h3>
         <div class="education-boxes">
           <div class="education-box">
-            <h4>Javascriptutveckling</h4>
+            <h4>{{ $t('cv.education.edu-one') }}</h4>
             <hr />
-            <p><span>Var: </span>IT-Högskolan i Stockholm</p>
-            <p><span>När: </span>Aug 2020 - Jun 2022</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.education.edu-one-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.education.edu-one-when') }}
+            </p>
           </div>
           <div class="education-box">
-            <h4>OOP with Java 1 & 2</h4>
+            <h4>{{ $t('cv.education.edu-two') }}</h4>
             <hr />
-            <p><span>Var: </span>Helsingfors Universitet (online)</p>
-            <p><span>När: </span>Dec 2019 - Feb 2020</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.education.edu-two-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.education.edu-two-when') }}
+            </p>
           </div>
           <div class="education-box">
-            <h4>Historia</h4>
+            <h4>{{ $t('cv.education.edu-three') }}</h4>
             <hr />
-            <p><span>Var: </span>Södertörns Högskola</p>
-            <p><span>När: </span>Jan 2003 - Maj 2003</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.education.edu-three-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.education.edu-three-when') }}
+            </p>
           </div>
           <div class="education-box">
-            <h4>Musikvetenskap</h4>
+            <h4>{{ $t('cv.education.edu-four') }}</h4>
             <hr />
-            <p><span>Var: </span>Stockholms Universitet</p>
-            <p><span>När: </span>Aug 2000 - Jun 2001</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.education.edu-four-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.education.edu-four-when') }}
+            </p>
           </div>
           <div class="education-box">
-            <h4>Engelska och engelsk litteratur</h4>
+            <h4>{{ $t('cv.education.edu-five') }}</h4>
             <hr />
-            <p><span>Var: </span>Stockholms Universitet</p>
-            <p><span>När: </span>Aug 2001 - Jun 2002</p>
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.education.edu-five-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.education.edu-five-when') }}
+            </p>
           </div>
         </div>
       </section>
@@ -316,8 +362,21 @@
 
 <script>
 export default {
-  beforeCreate() {
-    document.title = 'Pelle Lindroth | Om mig'
+  created() {
+    document.title = this.title
+  },
+  computed: {
+    getProfilePic() {
+      return require('@/assets/profile-picture.png')
+    },
+    title() {
+      return this.$root.$i18n.locale == 'sv'
+        ? 'Pelle Lindroth | Om mig'
+        : 'Pelle Lindroth | About me'
+    },
+  },
+  updated() {
+    document.title = this.title
   },
 }
 </script>
@@ -381,6 +440,11 @@ $mobile-cutoff: 750px;
         cursor: pointer;
         font-weight: 400;
         text-decoration: none;
+      }
+
+      span {
+        cursor: pointer;
+        font-weight: 500;
       }
 
       .arrow {

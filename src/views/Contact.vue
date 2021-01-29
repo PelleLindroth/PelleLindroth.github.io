@@ -12,7 +12,7 @@
         <div class="icon-container">
           <img src="../assets/icons/github-icon.svg" alt="GitHub Icon" />
         </div>
-        GitHub (ITHS-konto)
+        {{ $t('contact.gh-iths') }}
         <img
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
@@ -22,7 +22,7 @@
         <div class="icon-container">
           <img src="../assets/icons/github-icon.svg" alt="GitHub Icon" />
         </div>
-        GitHub (Privat konto)
+        {{ $t('contact.gh-private') }}
         <img
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
@@ -36,7 +36,7 @@
         <div class="icon-container">
           <img src="../assets/icons/linkedin-icon.svg" alt="LinkedIn Icon" />
         </div>
-        LinkedIn
+        {{ $t('contact.linked-in') }}
         <img
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
@@ -50,7 +50,7 @@
             alt="Mail Icon"
           />
         </div>
-        Skicka ett mail
+        {{ $t('contact.mail') }}
         <img
           class="go-icon"
           src="../assets/icons/go-arrow.svg"
@@ -59,13 +59,13 @@
     </div>
 
     <form @submit.prevent="sendEmail">
-      <h2>Direktmeddelande</h2>
+      <h2>{{ $t('contact.direct-message.dm-header') }}</h2>
       <textarea
         v-model="message"
         class="message-input"
         name="message"
         type="text"
-        placeholder="Skriv en rad..."
+        :placeholder="messagePlaceholder"
       />
       <div class="second-input-row">
         <input
@@ -73,7 +73,7 @@
           class="mail-input"
           name="user_email"
           type="text"
-          placeholder="Din mailadress (valfritt)"
+          :placeholder="mailPlaceholder"
         />
         <button ref="sendButton">{{ buttonText }}</button>
       </div>
@@ -86,12 +86,31 @@
 import emailjs from 'emailjs-com'
 
 export default {
+  computed: {
+    mailPlaceholder() {
+      if (this.$root.$i18n.locale === 'sv') {
+        return 'Din emailadress (valfritt)'
+      } else {
+        return 'Your email address (optional)'
+      }
+    },
+    messagePlaceholder() {
+      if (this.$root.$i18n.locale === 'sv') {
+        return 'Skriv en rad...'
+      } else {
+        return 'Drop a line...'
+      }
+    },
+  },
   created() {
-    document.title = 'Pelle Lindroth | Kontakt'
+    document.title =
+      this.$root.$i18n.locale === 'sv'
+        ? 'Pelle Lindroth | Kontakt'
+        : 'Pelle Lindroth | Contact'
   },
   data() {
     return {
-      buttonText: 'SKICKA',
+      buttonText: this.$root.$i18n.locale === 'sv' ? 'SKICKA' : 'SEND',
       email: '',
       message: '',
       messageResult: '',
@@ -104,7 +123,8 @@ export default {
       this.messageResult = ''
     },
     sendEmail(e) {
-      this.buttonText = 'SKICKAR...'
+      this.buttonText =
+        this.$root.$i18n.locale === 'sv' ? 'SKICKAR...' : 'SENDING'
       this.$refs.sendButton.style.opacity = '0.5'
 
       emailjs
@@ -125,21 +145,32 @@ export default {
     },
     showSuccess() {
       this.messageSubmitted = true
-      this.messageResult = 'Tack, ditt meddelande har skickats!'
+      this.messageResult =
+        this.$root.$i18n.locale === 'sv'
+          ? 'Tack, ditt meddelande har skickats!'
+          : 'Thanks, your message has been sent!'
       this.email = ''
       this.message = ''
-      this.buttonText = 'SKICKA'
+      this.buttonText = this.$root.$i18n.locale === 'sv' ? 'SKICKA' : 'SEND'
       this.$refs.sendButton.style.opacity = '1'
     },
     showFailure() {
       this.messageSubmitted = true
       this.messageResult =
-        'Tyvärr gick det inte att skicka meddelandet.\nFörsök gärna igen, eller kontakta mig på mail eller LinkedIn.'
+        this.$root.$i18n.locale === 'sv'
+          ? 'Tyvärr gick det inte att skicka meddelandet.\nFörsök gärna igen, eller kontakta mig på mail eller LinkedIn.'
+          : "Sorry, couldn't process your message.\nPlease try again later or get in touch through mail or LinkedIn."
       this.email = ''
       this.message = ''
-      this.buttonText = 'SKICKA'
+      this.buttonText = this.$root.$i18n.locale === 'sv' ? 'SKICKA' : 'SEND'
       this.$refs.sendButton.style.opacity = '1'
     },
+  },
+  update() {
+    document.title =
+      this.$root.$i18n.locale === 'sv'
+        ? 'Pelle Lindroth | Kontakt'
+        : 'Pelle Lindroth | Contact'
   },
 }
 </script>
