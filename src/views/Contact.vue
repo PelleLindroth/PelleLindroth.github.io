@@ -166,11 +166,13 @@ export default {
       this.$refs.sendButton.style.opacity = '1'
     },
   },
-  update() {
+  updated() {
     document.title =
       this.$root.$i18n.locale === 'sv'
         ? 'Pelle Lindroth | Kontakt'
         : 'Pelle Lindroth | Contact'
+
+    this.buttonText = this.$root.$i18n.locale === 'sv' ? 'SKICKA' : 'SEND'
   },
 }
 </script>
