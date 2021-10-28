@@ -22,9 +22,9 @@
     }
   },
   "cv": {
-    "intro-one": "Jag går för närvarande första året på den 2-åriga Javascriptutbildningen på IT-Högskolan i Stockholm. Utbildningen innefattar förutom frontend- och backendutveckling i Javascript även grafisk design och UX, crossplatform-utveckling, agila arbetsmetoder och mycket annat.",
-    "intro-two": "<br>I min framtida yrkesroll hoppas jag få tillfälle att arbeta både med frontend- och backend, kanske helst med lutning åt det senare. Jag trivs bra när jag får bygga nya saker och lösa problem och eftersom jag ägnat en stor del av livet åt musik har jag lätt att se likheter mellan programmering och musikskapande. Den kick jag brukade få av att skapa musik och text får jag numera mestadels genom att koda... <br /><br />",
-    "intro-three": "Jag söker nu LIA-praktik för hösten 2021. Om du tror att jag skulle passa in på ditt företag, ",
+    "intro-one": "Jag går för närvarande sista året på den 2-åriga Javascriptutbildningen på IT-Högskolan i Stockholm. Utbildningen innefattar förutom frontend- och backendutveckling i Javascript även grafisk design och UX, crossplatform-utveckling, agila arbetsmetoder, CI/CD, designprinciper och mycket annat.",
+    "intro-two": "<br>I min framtida yrkesroll hoppas jag få tillfälle att arbeta både med frontend- och backend. Jag trivs bra när jag får bygga nya saker och lösa problem och eftersom jag ägnat en stor del av livet åt musik har jag lätt att se likheter mellan programmering och musikskapande, som till exempel vad som krävs i fråga om kreativitet, envishet och arbetsinsats för att ta ett projekt från idé till färdig produkt.<br /><br />",
+    "intro-three": "Min första LIA (internship) gjorde jag på H&M:s frontendavdelning där jag utvecklade mina kunskaper i att arbeta agilt i team, hantera stora kodbaser, arbeta med CI/CD i Azure Devops och mycket mer. Till nästa LIA (vinter/vår 2022) ser jag fram emot att ytterligare utveckla mina kunskaper i en professionell arbetsmiljö, helst med fullstackprojekt för webben eller mot mobilapplikationer.",
     "where": "Var: ",
     "when": "När: ",
     "skills": {
@@ -38,6 +38,10 @@
     },
     "occupations": {
       "occ-header": "TIDIGARE JOBB (I URVAL)",
+      "occ-zero": "Frontend developer (internship)",
+      "occ-zero-where": "H&M Group",
+      "occ-zero-when": "2021",
+      "occ-zero-description": "Arbetade med komponentutveckling i React, Typescript och SASS. Praktiken innehöll också mycket möten och kommunikation med andra team för att diskutera förändringar och lösningar.",
       "occ-one": "Copywriter / SEO writer",
       "occ-one-where": "Defiso media",
       "occ-one-when": "2018-2020",

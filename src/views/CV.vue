@@ -9,16 +9,8 @@
         <p v-html="$t('cv.intro-two')"></p>
         <p>
           {{ $t('cv.intro-three')
-          }}<span @click="$router.push('/contact')">{{
-            $root.$i18n.locale === 'sv' ? 'hör gärna av dig!' : 'get in touch!'
-          }}</span>
+          }}
         </p>
-
-        <img
-          class="arrow"
-          src="@/assets/icons/arrow-down.svg"
-          alt="Arrow down"
-        />
       </div>
     </div>
     <div class="cv-container">
@@ -39,6 +31,15 @@
                   />
                 </div>
                 Javascript (ES6)
+              </li>
+              <li>
+                <div class="icon-container">
+                  <img
+                    src="../assets/tech-logos/ts-logo.svg"
+                    alt="Typescript Logo"
+                  />
+                </div>
+                Typescript
               </li>
               <li>
                 <div class="icon-container">
@@ -84,6 +85,15 @@
               <li>
                 <div class="icon-container">
                   <img
+                    src="../assets/tech-logos/react-logo.svg"
+                    alt="React Logo"
+                  />
+                </div>
+                React Native
+              </li>
+              <li>
+                <div class="icon-container">
+                  <img
                     src="../assets/tech-logos/redux-logo.svg"
                     alt="Redux Logo"
                   />
@@ -95,6 +105,15 @@
                   <img src="../assets/tech-logos/vue-logo.svg" alt="Vue Logo" />
                 </div>
                 Vue
+              </li>
+              <li>
+                <div class="icon-container">
+                  <img
+                    src="../assets/tech-logos/nextjs-logo.png"
+                    alt="Nextjs Logo"
+                  />
+                </div>
+                Next.js
               </li>
               <li>
                 <div class="icon-container">
@@ -132,6 +151,15 @@
                   />
                 </div>
                 MongoDB
+              </li>
+              <li>
+                <div class="icon-container">
+                  <img
+                    src="../assets/tech-logos/sequelize-logo.svg"
+                    alt="Sequelize Logo"
+                  />
+                </div>
+                Sequelize
               </li>
               <li>
                 <div class="icon-container">
@@ -191,14 +219,15 @@
                 </div>
                 Figma
               </li>
+              <li></li>
               <li>
                 <div class="icon-container">
                   <img
-                    src="../assets/tech-logos/mongodb-logo.png"
-                    alt="MongoDB Compass Logo"
+                    src="../assets/tech-logos/azure-logo.svg"
+                    alt="Azure Devops Logo"
                   />
                 </div>
-                MongoDB Compass
+                Azure Devops
               </li>
             </ul>
 
@@ -214,6 +243,15 @@
                 </div>
                 Jest
               </li>
+              <li>
+                <div class="icon-container">
+                  <img
+                    src="../assets/tech-logos/mocha-logo.svg"
+                    alt="Mocha Logo"
+                  />
+                </div>
+                Mocha
+              </li>
             </ul>
           </div>
         </div>
@@ -223,6 +261,22 @@
           <em>{{ $t('cv.occupations.occ-header') }}</em>
         </h3>
         <div class="job-boxes">
+          <div class="job-box">
+            <h4>{{ $t('cv.occupations.occ-zero') }}</h4>
+            <hr />
+            <p>
+              <span>{{ $t('cv.where') }} </span
+              >{{ $t('cv.occupations.occ-zero-where') }}
+            </p>
+            <p>
+              <span>{{ $t('cv.when') }} </span
+              >{{ $t('cv.occupations.occ-zero-when') }}
+            </p>
+            <hr class="invisible" />
+            <p class="job-description">
+              {{ $t('cv.occupations.occ-zero-description') }}
+            </p>
+          </div>
           <div class="job-box">
             <h4>{{ $t('cv.occupations.occ-one') }}</h4>
             <hr />
@@ -388,7 +442,7 @@ $mobile-cutoff: 750px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(44, 64px);
+  grid-template-rows: repeat(48, 64px);
   margin: 4rem auto 0;
   max-width: 120rem;
 
@@ -408,11 +462,11 @@ $mobile-cutoff: 750px;
 
   .presentation-container {
     grid-column: 1 / span 7;
-    grid-row: 1 / span 7;
+    grid-row: 1 / span 8;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
-      grid-row: 2 / span 16;
+      grid-row: 2 / span 20;
       margin-right: 2rem;
     }
 
@@ -475,7 +529,7 @@ $mobile-cutoff: 750px;
 
     @media screen and (max-width: $mobile-cutoff) {
       grid-column: 1 / span 8;
-      grid-row: 21 / auto;
+      grid-row: 23 / auto;
     }
 
     h3 {

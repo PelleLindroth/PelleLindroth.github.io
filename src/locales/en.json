@@ -22,9 +22,9 @@
     }
   },
   "cv": {
-    "intro-one": "I’m currently attending my first year of the two-year JavaScript Developer program at IT-Högskolan in Stockholm. Besides frontend and backend development with JS, the program also includes graphic design and UX, crossplatform development, agile work methods and much more.",
-    "intro-two": "<br>In my future profession I hope to have the opportunity to work on both the frontend and the backend, perhaps leaning slightly towards the latter. I enjoy coming up with new ideas, building things and solving problems. Having spent a lot of my life making music, I see a lot of similarities between coding and music writing. The kicks I used to get from music I mostly get from coding nowadays...<br /><br />",
-    "intro-three": "My first LIA internship is in the fall of 2021. If you think I would be a good fit at your company, please ",
+    "intro-one": "I’m currently attending my second year of the two-year JavaScript Developer program at IT-Högskolan in Stockholm. Besides frontend and backend development with JS, the program also includes graphic design and UX, crossplatform development, agile work methods, CI/CD, design principles and much more.",
+    "intro-two": "<br>In my future profession I hope to have the opportunity to work on both the frontend and the backend. I enjoy coming up with new ideas, building things and solving problems. Having spent a lot of my life making music, I see a lot of similarities between coding and music writing, for example what it takes in terms of creativity, stubbornness and hard work to finish a project.<br /><br />",
+    "intro-three": "I did my first internship period at H&M Frontend, where i increased my knowledge and skills in working agile in a team, handling a large codebase, working with CI/CD in Azure Devops and lots more. For my next LIA period I look forward to further developing my skills in a professional environment, preferrably on fullstack projects for the web or in native mobile applications.",
     "where": "Where:",
     "when": "When:",
     "skills": {
@@ -38,6 +38,10 @@
     },
     "occupations": {
       "occ-header": "PREVIOUS OCCUPATIONS",
+      "occ-zero": "Frontend developer (internship)",
+      "occ-zero-where": "H&M Group",
+      "occ-zero-when": "2021",
+      "occ-zero-description": "Worked with component development in React, Typescript and SASS. The internship also included a lot of meetings and communicating with other teams to discuss changes and best solutions.",
       "occ-one": "Copywriter / SEO writer",
       "occ-one-where": "Defiso media",
       "occ-one-when": "2018-2020",
